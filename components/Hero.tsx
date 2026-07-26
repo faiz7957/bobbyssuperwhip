@@ -16,7 +16,7 @@ export default function Hero() {
 
       <div className="absolute inset-0 bg-gradient-to-r from-sky-950/30 via-sky-900/5 to-transparent" />
 
-      <div className="relative z-10 flex min-h-[100svh] max-w-7xl items-center pl-20 pr-10 py-24">
+      <div className="relative z-10 flex min-h-[100svh] max-w-7xl items-center pl-5 pr-10 py-24">
         <div className="w-full max-w-sm rounded-3xl border border-white/10 bg-slate-900/10 p-8 backdrop-blur-sm shadow-lg">
           <span className="inline-flex rounded-full bg-sky-500 px-4 py-2 text-sm font-semibold text-white">
             🍦 Serving the Midlands since 2016
