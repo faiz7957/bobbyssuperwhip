@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -15,31 +16,40 @@ export default function Hero() {
 
       <div className="absolute inset-0 bg-gradient-to-r from-sky-950/30 via-sky-900/5 to-transparent" />
 
-      <div className="relative z-10 flex min-h-[100svh] max-w-7xl items-center pl0-20 pr-10 py-24">
+      <div className="relative z-10 flex min-h-[100svh] max-w-7xl items-center pl-20 pr-10 py-24">
         <div className="w-full max-w-sm rounded-3xl border border-white/10 bg-slate-900/10 p-8 backdrop-blur-sm shadow-lg">
           <span className="inline-flex rounded-full bg-sky-500 px-4 py-2 text-sm font-semibold text-white">
             🍦 Serving the Midlands since 2016
           </span>
 
-          <h1 className="mt-6 text-5xl md:text-7xl font-black leading-none text-white">
+          <h1 className="mt-6 text-5xl font-black leading-none text-white md:text-7xl">
             Bobby&apos;s
             <span className="block text-yellow-300">Super Whip</span>
           </h1>
 
           <p className="mt-5 text-2xl font-bold text-white">
-            It&apos;s Not A Dream,<br />
+            It&apos;s Not A Dream,
+            <br />
             It&apos;s Bobby&apos;s Ice Cream!
           </p>
 
           <p className="mt-5 text-lg text-white/95">
-            Premium whipped ice cream, delicious slush, sundaes and event catering across Walsall and the Midlands.
+            Premium whipped ice cream, delicious slush, sundaes and event
+            catering across Walsall and the Midlands.
           </p>
 
           <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-            <a href="#events" className="rounded-xl bg-yellow-400 px-8 py-4 text-center font-bold text-slate-900 hover:bg-yellow-300 transition">
+            <Link
+              href="/book"
+              className="rounded-xl bg-yellow-400 px-8 py-4 text-center font-bold text-slate-900 transition hover:bg-yellow-300"
+            >
               Book an Event
-            </a>
-            <a href="#treats" className="rounded-xl border-2 border-white px-8 py-4 text-center font-semibold text-white hover:bg-white hover:text-slate-900 transition">
+            </Link>
+
+            <a
+              href="/#treats"
+              className="rounded-xl border-2 border-white px-8 py-4 text-center font-semibold text-white transition hover:bg-white hover:text-slate-900"
+            >
               View Our Treats
             </a>
           </div>
