@@ -6,34 +6,50 @@ import Link from "next/link";
 export default function Hero() {
   return (
     <section className="relative isolate min-h-[100svh] overflow-hidden">
+      {/* Mobile Hero */}
+      <Image
+        src="/images/van-mobile.png"
+        alt="Bobby's Super Whip Ice Cream Van"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover object-center md:hidden"
+      />
+
+      {/* Desktop Hero */}
       <Image
         src="/images/van.png"
         alt="Bobby's Super Whip Ice Cream Van"
         fill
         priority
-        className="object-cover object-[86%_center] md:object-[92%_center] scale-100"
+        sizes="100vw"
+        className="hidden md:block object-cover object-[92%_center]"
       />
 
-      <div className="absolute inset-0 bg-gradient-to-r from-sky-950/30 via-sky-900/5 to-transparent" />
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-sky-950/40 via-sky-900/10 to-transparent" />
 
-      <div className="relative z-10 flex min-h-[100svh] max-w-7xl items-center pl-5 pr-10 py-24">
-        <div className="w-full max-w-sm rounded-3xl border border-white/10 bg-slate-900/10 p-8 backdrop-blur-sm shadow-lg">
+      {/* Content */}
+      <div className="relative z-10 flex min-h-[100svh] items-center px-5 py-24 md:max-w-7xl md:px-8">
+        <div className="w-full max-w-[300px] rounded-3xl border border-white/10 bg-slate-900/20 p-6 backdrop-blur-md shadow-2xl md:max-w-sm md:p-8">
           <span className="inline-flex rounded-full bg-sky-500 px-4 py-2 text-sm font-semibold text-white">
             🍦 Serving the Midlands since 2016
           </span>
 
-          <h1 className="mt-6 text-5xl font-black leading-none text-white md:text-7xl">
+          <h1 className="mt-6 text-4xl font-black leading-none text-white md:text-7xl">
             Bobby&apos;s
-            <span className="block text-yellow-300">Super Whip</span>
+            <span className="block text-yellow-300">
+              Super Whip
+            </span>
           </h1>
 
-          <p className="mt-5 text-2xl font-bold text-white">
+          <p className="mt-5 text-xl font-bold text-white md:text-2xl">
             It&apos;s Not A Dream,
             <br />
             It&apos;s Bobby&apos;s Ice Cream!
           </p>
 
-          <p className="mt-5 text-lg text-white/95">
+          <p className="mt-5 text-base leading-relaxed text-white/95 md:text-lg">
             Premium whipped ice cream, delicious slush, sundaes and event
             catering across Walsall and the Midlands.
           </p>
