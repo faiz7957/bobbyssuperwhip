@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import { Baloo_2 } from "next/font/google";
+
+const baloo = Baloo_2({
+  subsets: ["latin"],
+  weight: ["700", "800"],
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
