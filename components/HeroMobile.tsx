@@ -167,17 +167,21 @@ export default function HeroMobile() {
         <motion.h2
   initial={{ opacity: 0, y: 25 }}
   animate={{ opacity: 1, y: 0 }}
-  transition={{ delay: 0.3 }}
-  className="mt-7 text-[27px] font-bold leading-tight opacity-90"
+  transition={{
+    delay: 0.3,
+    duration: 0.7,
+    ease: "easeOut",
+  }}
+  className="mt-7 text-[32px] font-medium leading-tight"
 >
-  <span className="text-slate-320">
+  <span className="text-slate-600">
     It's Not A Dream,
   </span>
 
   <br />
 
-  <span className="text-blue-300">
-    It's Bobby's Ice Cream!
+  <span className="text-sky-300">
+    It's Bobby&apos;s Ice Cream!
   </span>
 </motion.h2>
 
