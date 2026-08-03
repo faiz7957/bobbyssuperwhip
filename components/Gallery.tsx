@@ -18,15 +18,16 @@ const galleryImages = [
     title: "Oreo Biscoff Sundae",
   },
   {
-    src: "/images/gallery/strawberry-sundae.jpg",
-    title: "Strawberry Sundae",
+  src: "/images/gallery/sherbet-sundae.jpg",
+  title: "Sherbet Sundae",
   },
+  
   {
     src: "/images/gallery/slush-machine.jpg",
     title: "Premium Slush",
   },
   {
-    src: "/images/gallery/rainbow-sundae-2.jpg",
+    src: "/images/gallery/luxury whippy.jpg",
     title: "Luxury Whippy",
   },
 ];
