@@ -235,17 +235,17 @@ export default function HeroDesktop() {
   >
     <Link
       href="/book"
-      className="rounded-2xl bg-amber-400 px-8 py-4 font-bold text-slate-900 shadow-xl transition hover:scale-105"
+      className="flex w-64 justify-center rounded-2xl bg-amber-400 px-8 py-4 font-bold text-slate-900 shadow-xl transition hover:scale-105"
     >
       Book an Event
     </Link>
 
     <Link
-      href="/#treats"
-      className="rounded-2xl border-2 border-sky-500 px-8 py-4 font-bold text-sky-700 transition hover:bg-sky-500 hover:text-white"
-    >
-      View Our Treats
-    </Link>
+  href="/#gallery"
+  className="flex w-64 justify-center rounded-2xl border-2 border-sky-500 bg-white px-8 py-4 font-bold text-slate-900 shadow-xl transition duration-300 hover:scale-105 hover:bg-sky-500 hover:text-white"
+>
+  View Customer Favourites
+</Link>
   </motion.div>
 </div>
 
