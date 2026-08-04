@@ -44,8 +44,8 @@ export default function Gallery() {
       >
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-16 text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-5 py-2 shadow-sm backdrop-blur-sm">
-  <Sparkles className="h-4 w-4 text-amber-400" />
+      <div className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-white/90 px-6 shadow-md backdrop-blur-sm">
+  <Sparkles className="h-5 w-5 text-amber-400" />
   <span className="text-sm font-semibold text-slate-700">
     Customer Favourites
   </span>
@@ -55,9 +55,9 @@ export default function Gallery() {
               Our Most Popular Treats.
             </h2>
 
-            <p className="mx-auto mt-5 max-w-3xl text-xl leading-relaxed text-slate-600">
-  Discover the desserts our customers love most, from premium whippy ice
-  cream and luxury sundaes to refreshing slush. Freshly served at weddings,
+    <p className="mx-auto mt-5 max-w-3xl text-xl leading-relaxed text-slate-600">
+  Discover our customers' favourite treats, from premium whippy ice cream,
+  luxury sundaes and refreshing slush, freshly served at weddings,
   birthdays, schools, nurseries, corporate events and festivals across
   Walsall and the West Midlands.
 </p>
