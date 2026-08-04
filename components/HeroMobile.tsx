@@ -4,11 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import {
-    
   CalendarDays,
   IceCreamCone,
   ChevronRight,
   MapPin,
+  BadgeCheck,
+  ShieldCheck,
 } from "lucide-react";
 const baloo = Baloo_2({
   subsets: ["latin"],
@@ -195,6 +196,37 @@ export default function HeroMobile() {
         >
           Premium whipped ice cream, luxury sundaes and refreshing slush for birthdays, schools, weddings and events across the Midlands.
         </motion.p>
+        <div className="mt-6 grid grid-cols-2 gap-3">
+
+  <div className="flex h-12 items-center justify-center gap-2 rounded-full bg-white/90 shadow-md backdrop-blur-sm">
+    <IceCreamCone className="h-5 w-5 text-sky-500" />
+    <span className="text-xs font-semibold text-slate-700">
+      Ice Cream Van Hire
+    </span>
+  </div>
+
+  <div className="flex h-12 items-center justify-center gap-2 rounded-full bg-white/90 shadow-md backdrop-blur-sm">
+    <MapPin className="h-5 w-5 text-sky-500" />
+    <span className="text-xs font-semibold text-slate-700">
+      Walsall &amp; West Midlands
+    </span>
+  </div>
+
+  <div className="flex h-12 items-center justify-center gap-2 rounded-full bg-white/90 shadow-md backdrop-blur-sm">
+    <BadgeCheck className="h-5 w-5 text-sky-500" />
+    <span className="text-xs font-semibold text-slate-700">
+      5-Star Food Hygiene
+    </span>
+  </div>
+
+  <div className="flex h-12 items-center justify-center gap-2 rounded-full bg-white/90 shadow-md backdrop-blur-sm">
+    <ShieldCheck className="h-5 w-5 text-sky-500" />
+    <span className="text-xs font-semibold text-slate-700">
+      £10M Public Liability
+    </span>
+  </div>
+
+</div>
 
         {/* Buttons */}
 
@@ -216,13 +248,13 @@ export default function HeroMobile() {
           </Link>
 
           <Link
-            href="/#treats"
-            className="flex items-center justify-center gap-3 rounded-2xl border-2 border-blue-600 bg-white py-5 text-xl font-bold text-blue-700 transition hover:bg-blue-50"
-          >
-            <IceCreamCone className="h-6 w-6" />
+  href="/#gallery"
+  className="flex items-center justify-center gap-3 rounded-2xl border-2 border-sky-500 bg-white py-5 text-xl font-bold text-slate-900 shadow-xl transition duration-300 hover:scale-[1.02] hover:bg-sky-500 hover:text-white"
+>
+  <IceCreamCone className="h-6 w-6" />
 
-            View Our Treats
-          </Link>
+  View Customer Favourites
+</Link>
         </motion.div>        {/* Van */}
 
         <motion.div
