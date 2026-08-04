@@ -111,7 +111,7 @@ export default function HeroMobile() {
 
       </div>
 
-      <div className="relative z-20 px-8 pt-32 pb-6">
+      <div className="relative z-50 px-8 pt-32 pb-6">
 
         {/* Badge */}
 
@@ -273,7 +273,7 @@ export default function HeroMobile() {
             duration: 0.9,
             ease: "easeOut",
           }}
-          className="relative mt-12 -mb-20 flex justify-center"
+          className="relative z-10 mt-12 -mb-20 flex justify-center"
         >
           {/* Main glow */}
 
