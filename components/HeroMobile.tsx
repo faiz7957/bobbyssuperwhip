@@ -16,6 +16,12 @@ const baloo = Baloo_2({
   weight: ["800"],
 });
 export default function HeroMobile() {
+  const scrollToGallery = () => {
+  document.getElementById("gallery")?.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+};
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-white via-sky-50 via-sky-100 to-sky-200 md:hidden">
 
@@ -230,12 +236,14 @@ export default function HeroMobile() {
 
         {/* Buttons */}
 
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6 }}
-          className="mt-8 flex flex-col gap-4"
-        >
+        {/* Buttons */}
+
+<motion.div
+  initial={{ opacity: 0, y: 25 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ delay: 0.6 }}
+  className="relative z-50 mt-8 flex flex-col gap-4"
+>
           <Link
             href="/book"
             className="flex items-center justify-center gap-3 rounded-2xl bg-amber-400 py-5 text-xl font-bold text-slate-900 shadow-xl transition hover:scale-[1.02]"
