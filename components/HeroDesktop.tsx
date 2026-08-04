@@ -3,6 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import {
+  ShieldCheck,
+  BadgeCheck,
+  MapPin,
+  IceCreamCone,
+} from "lucide-react";
 import { Baloo_2 } from "next/font/google";
 
 const baloo = Baloo_2({
@@ -171,19 +177,52 @@ export default function HeroDesktop() {
   </motion.h2>
 
   <motion.p
-    initial={{ opacity: 0, y: 25 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{
-  delay: 0.45,
-  duration: 0.7,
-  ease: "easeOut",
-}}
-    className="mt-8 max-w-lg text-xl leading-relaxed text-slate-700"
-  >
-    Premium whipped ice cream, delicious slush, luxury sundaes and unforgettable
-    event catering across Walsall and the West Midlands.
-  </motion.p>
+  initial={{ opacity: 0, y: 25 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{
+    delay: 0.45,
+    duration: 0.7,
+    ease: "easeOut",
+  }}
+  className="mt-8 max-w-lg text-xl leading-relaxed text-slate-700"
+>
+  Hire Bobby&apos;s Super Whip for premium whippy ice cream, luxury sundaes
+  and refreshing slush at weddings, birthdays, schools, nurseries,
+  festivals and corporate events across Walsall and the West Midlands.
+  Fully insured with a 5-Star Food Hygiene Rating.
+</motion.p>
 
+<div className="mt-8 grid max-w-lg grid-cols-2 gap-4">
+
+  <div className="flex h-12 items-center justify-center gap-2 rounded-full bg-white/90 shadow-md backdrop-blur-sm">
+    <IceCreamCone className="h-5 w-5 text-sky-500" />
+    <span className="text-sm font-semibold text-slate-700">
+      Ice Cream Van Hire
+    </span>
+  </div>
+
+  <div className="flex h-12 items-center justify-center gap-2 rounded-full bg-white/90 shadow-md backdrop-blur-sm">
+    <MapPin className="h-5 w-5 text-sky-500" />
+    <span className="text-sm font-semibold text-slate-700">
+      Walsall &amp; West Midlands
+    </span>
+  </div>
+
+  <div className="flex h-12 items-center justify-center gap-2 rounded-full bg-white/90 shadow-md backdrop-blur-sm">
+    <BadgeCheck className="h-5 w-5 text-sky-500" />
+    <span className="text-sm font-semibold text-slate-700">
+      5-Star Food Hygiene
+    </span>
+  </div>
+
+  <div className="flex h-12 items-center justify-center gap-2 rounded-full bg-white/90 shadow-md backdrop-blur-sm">
+    <ShieldCheck className="h-5 w-5 text-sky-500" />
+    <span className="text-sm font-semibold text-slate-700">
+      £10M Public Liability
+    </span>
+  </div>
+
+</div>
   <motion.div
     initial={{ opacity: 0, y: 25 }}
     animate={{ opacity: 1, y: 0 }}
@@ -192,7 +231,7 @@ export default function HeroDesktop() {
   duration: 0.7,
   ease: "easeOut",
 }}
-    className="mt-10 flex gap-5"
+    className="mt-12 flex gap-5"
   >
     <Link
       href="/book"

@@ -8,19 +8,29 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Bobby's Super Whip provides luxury whippy ice cream, premium slush and desserts for birthdays, weddings, schools, nurseries and corporate events across Walsall and the West Midlands.",
+    "Hire Bobby's Super Whip for premium whippy ice cream, luxury sundaes and refreshing slush at weddings, birthdays, schools, nurseries, corporate events and festivals across Walsall, the West Midlands and surrounding areas. Fully insured with a 5-star food hygiene rating.",
 
   keywords: [
+    "Bobby's Super Whip",
+    "Bobbys Super Whip",
     "Ice Cream Van Walsall",
-    "Ice Cream Van Hire",
+    "Ice Cream Van Hire Walsall",
+    "Ice Cream Van West Midlands",
+    "Ice Cream Van Hire West Midlands",
+    "Ice Cream Van Near Me",
     "Whippy Ice Cream",
-    "Slush",
+    "Soft Serve Ice Cream",
+    "Luxury Sundaes",
+    "Sherbet Sundaes",
+    "Premium Slush",
+    "Slush Machine Hire",
     "Wedding Ice Cream Van",
     "Birthday Ice Cream Van",
     "School Ice Cream Van",
-    "Corporate Events",
-    "West Midlands",
-    "Bobby's Super Whip",
+    "Nursery Ice Cream Van",
+    "Corporate Event Ice Cream Van",
+    "Festival Ice Cream Van",
+    "Event Catering Walsall",
   ],
 
   authors: [{ name: "Bobby's Super Whip" }],
@@ -43,9 +53,10 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-    title: "Bobby's Super Whip",
+    title:
+      "Bobby's Super Whip | Ice Cream Van Hire | Walsall & West Midlands",
     description:
-      "Luxury whippy ice cream and premium slush for events across Walsall and the West Midlands.",
+      "Luxury whippy ice cream, premium slush and delicious desserts for weddings, birthdays, schools, festivals and corporate events across Walsall and the West Midlands.",
     url: "https://bobbyssuperwhip.co.uk",
     siteName: "Bobby's Super Whip",
     locale: "en_GB",
@@ -65,6 +76,47 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: "Bobby's Super Whip",
+  url: "https://bobbyssuperwhip.co.uk",
+  image: "https://bobbyssuperwhip.co.uk/images/van-cutout-v2.png",
+  logo: "https://bobbyssuperwhip.co.uk/favicon.ico",
+  email: "bookings@bobbyssuperwhip.co.uk",
+
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Walsall",
+    addressRegion: "West Midlands",
+    addressCountry: "GB",
+  },
+
+  areaServed: [
+    "Walsall",
+    "Aldridge",
+    "Bloxwich",
+    "Brownhills",
+    "Pelsall",
+    "Willenhall",
+    "Great Barr",
+    "Sutton Coldfield",
+    "Cannock",
+    "Lichfield",
+    "Wednesbury",
+    "West Bromwich",
+    "Wolverhampton",
+    "West Midlands",
+  ],
+
+  description:
+    "Luxury ice cream van hire serving Walsall and the West Midlands for weddings, birthdays, schools, nurseries, festivals and corporate events.",
+
+  priceRange: "££",
+
+  servesCuisine: "Ice Cream",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -72,7 +124,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(jsonLd),
+          }}
+        />
+
+        {children}
+      </body>
     </html>
   );
 }
