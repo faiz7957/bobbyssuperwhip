@@ -256,7 +256,8 @@ export default function HeroMobile() {
           </Link>
 
           <Link
-  href="/#gallery"
+  href="#gallery"
+  scroll={true}
   className="flex items-center justify-center gap-3 rounded-2xl border-2 border-sky-500 bg-white py-5 text-xl font-bold text-slate-900 shadow-xl transition duration-300 hover:scale-[1.02] hover:bg-sky-500 hover:text-white"
 >
   <IceCreamCone className="h-6 w-6" />
@@ -287,20 +288,22 @@ export default function HeroMobile() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="absolute bottom-16 h-80 w-80 rounded-full bg-yellow-300/35 blur-3xl"
+            className="pointer-events-none absolute bottom-16 h-80 w-80 rounded-full bg-yellow-300/35 blur-3xl"
           />
 
           {/* Secondary glow */}
 
-          <div className="absolute bottom-8 h-64 w-96 rounded-full bg-sky-200/35 blur-3xl" />
+          <div className="pointer-events-none absolute bottom-8 h-64 w-96 rounded-full bg-sky-200/35 blur-3xl" />
+
 
           {/* Soft white glow */}
 
-          <div className="absolute bottom-0 h-72 w-[420px] rounded-full bg-white/40 blur-3xl" />
+          <div className="pointer-events-none absolute bottom-0 h-72 w-[420px] rounded-full bg-white/40 blur-3xl" />
+
 
           {/* Ground shadow */}
 
-          <div className="absolute bottom-1 h-8 w-80 rounded-full bg-slate-900/15 blur-xl" />
+          <div className="pointer-events-none absolute bottom-1 h-8 w-80 rounded-full bg-slate-900/15 blur-xl" />
 
           {/* Floating van */}
 
@@ -313,7 +316,7 @@ export default function HeroMobile() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="relative z-20"
+            className="pointer-events-none relative z-20"
           >
             <Image
               src="/images/van-cutout-v2.png"

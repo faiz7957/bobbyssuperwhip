@@ -12,8 +12,7 @@ const fredoka = Fredoka({
 
 const navLinks = [
   { name: "Home", href: "/" },
-  { name: "Treats", href: "/#treats" },
-  { name: "Gallery", href: "/#gallery" },
+  { name: "Customer Favourites", href: "/#gallery" },
   { name: "Events", href: "/#events" },
   { name: "Contact", href: "/#contact" },
 ];
