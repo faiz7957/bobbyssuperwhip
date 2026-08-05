@@ -111,7 +111,7 @@ export default function HeroMobile() {
 
       </div>
 
-      <div className="relative z-50 px-8 pt-32 pb-6">
+      <div className="relative z-10 px-8 pt-32 pb-6">
 
         {/* Badge */}
 
@@ -242,7 +242,7 @@ export default function HeroMobile() {
   initial={{ opacity: 0, y: 25 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.6 }}
-  className="relative z-50 mt-8 flex flex-col gap-4"
+  className="relative z-10 mt-8 flex flex-col gap-4"
 >
           <Link
             href="/book"
