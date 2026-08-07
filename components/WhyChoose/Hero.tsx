@@ -11,11 +11,9 @@ export default function Hero() {
       <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 py-24 lg:grid-cols-2">
         {/* Left */}
         <div>
-          <span className="inline-block rounded-full bg-sky-100 px-3 py-1.5 text-xs font-semibold text-sky-700 md:px-4 md:py-2 md:text-sm">
-             Serving Walsall &amp; The West Midlands Since 2016
-        </span>
+          
 
-          <h1 className="mt-8 text-5xl font-black leading-tight text-slate-900 md:text-7xl">
+          <h1 className="text-5xl font-black leading-tight text-slate-900 md:text-7xl">
             Why Choose
             <br />
             <span className="text-sky-500">
