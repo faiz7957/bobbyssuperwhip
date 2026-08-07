@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Navbar from "@/components/Navbar";
 import {
   ShieldCheck,
   BadgeCheck,
@@ -110,7 +109,6 @@ export default function BookPage() {
 
   return (
     <>
-      <Navbar />
 
       <main className="min-h-screen bg-gradient-to-b from-sky-50 to-white pt-28">
         <section className="mx-auto max-w-7xl px-6 py-20">

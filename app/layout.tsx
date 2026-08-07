@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 export const metadata: Metadata = {
   title: {
@@ -142,17 +143,19 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(jsonLd),
-          }}
-        />
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify(jsonLd),
+    }}
+  />
 
-                {children}
+  <Navbar />
 
-        <GoogleAnalytics gaId="G-9WN5XZ0X5C" />
-      </body>
+  {children}
+
+  <GoogleAnalytics gaId="G-9WN5XZ0X5C" />
+</body>
     </html>
   );
 }

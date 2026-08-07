@@ -12,6 +12,7 @@ const fredoka = Fredoka({
 
 const navLinks = [
   { name: "Home", href: "/" },
+  { name: "Why Bobby's?", href: "/why-choose-bobbys" },
   { name: "Customer Favourites", href: "/#gallery" },
   { name: "Events", href: "/#events" },
   { name: "Contact", href: "/#contact" },
@@ -63,7 +64,7 @@ export default function Navbar() {
             href="/book"
             className="rounded-full bg-sky-600 px-6 py-3 font-semibold text-white transition hover:bg-sky-700"
           >
-            Book Now
+            Get a Quote
           </Link>
         </nav>
 
@@ -101,7 +102,7 @@ export default function Navbar() {
               onClick={() => setIsOpen(false)}
               className="mt-4 rounded-full bg-sky-600 py-3 text-center font-semibold text-white hover:bg-sky-700"
             >
-              Book Now
+              Get a Quote
             </Link>
           </nav>
         </div>

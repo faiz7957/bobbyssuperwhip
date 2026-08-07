@@ -250,7 +250,7 @@ export default function HeroMobile() {
           >
             <CalendarDays className="h-6 w-6" />
 
-            Book Your Event
+            Get a Quote
 
             <ChevronRight className="h-5 w-5" />
           </Link>

@@ -237,7 +237,7 @@ export default function HeroDesktop() {
       href="/book"
       className="flex w-64 justify-center rounded-2xl bg-amber-400 px-8 py-4 font-bold text-slate-900 shadow-xl transition hover:scale-105"
     >
-      Book an Event
+      Get a Quote
     </Link>
 
     <Link
