@@ -311,13 +311,13 @@ export default function BookPage() {
   />
 
   <input
-    name="guests"
-    type="number"
-    value={form.guests}
-    onChange={handleChange}
-    placeholder="Estimated Number of Guests"
-    className={`${inputClass} pl-12 placeholder:text-sm sm:placeholder:text-lg`}
-  />
+  name="guests"
+  type="number"
+  value={form.guests}
+  onChange={handleChange}
+  placeholder="Estimated Number of Guests"
+  className={`${inputClass} pl-12 placeholder:text-xs sm:placeholder:text-lg`}
+/>
 </div>
 
                 <div className="relative">
