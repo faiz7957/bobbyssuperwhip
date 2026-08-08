@@ -47,14 +47,14 @@ export default function Hero() {
 
         {/* Right */}
         <div>
-          <div className="overflow-hidden rounded-[2rem] shadow-2xl aspect-[9/7]">
+          <div className="relative z-50 overflow-hidden rounded-[2rem] shadow-2xl aspect-[9/7] bg-white">
             <Image
               src="/images/why-choose-hero.png"
               alt="Bobby's Super Whip Ice Cream Van"
               width={900}
               height={700}
               priority
-              className="h-full w-full object-contain"
+              className="h-full w-full object-cover"
             />
           </div>
         </div>
