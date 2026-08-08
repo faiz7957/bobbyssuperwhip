@@ -246,7 +246,7 @@ export default function BookPage() {
     value={form.phone}
     onChange={handleChange}
     placeholder="Mobile Number (Optional)"
-    className={`${inputClass} pl-12`}
+    className={`${inputClass} pl-12 placeholder:text-xs sm:placeholder:text-lg`}
   />
 </div>
 
