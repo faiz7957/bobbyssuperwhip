@@ -261,10 +261,11 @@ export default function BookPage() {
   value={form.eventType}
   onChange={handleChange}
   className={`${inputClass} pl-12 text-slate-500`}
+  style={{ color: form.eventType ? "#64748b" : "#64748b" }}
 >
     <option value="" className="text-slate-500">
-  Event Type
-</option>
+      Event Type
+    </option>
     <option>Birthday Party</option>
     <option>Wedding</option>
     <option>School</option>
