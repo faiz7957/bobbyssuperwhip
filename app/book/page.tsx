@@ -316,7 +316,7 @@ export default function BookPage() {
     value={form.guests}
     onChange={handleChange}
     placeholder="Estimated Number of Guests"
-    className={`${inputClass} pl-12`}
+    className={`${inputClass} pl-12 text-base sm:text-lg`}
   />
 </div>
 
