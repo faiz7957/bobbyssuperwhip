@@ -257,12 +257,14 @@ export default function BookPage() {
   />
 
   <select
-    name="eventType"
-    value={form.eventType}
-    onChange={handleChange}
-    className={`${inputClass} pl-12`}
-  >
-    <option value="">Event Type</option>
+  name="eventType"
+  value={form.eventType}
+  onChange={handleChange}
+  className={`${inputClass} pl-12 text-slate-500`}
+>
+    <option value="" className="text-slate-500">
+  Event Type
+</option>
     <option>Birthday Party</option>
     <option>Wedding</option>
     <option>School</option>
