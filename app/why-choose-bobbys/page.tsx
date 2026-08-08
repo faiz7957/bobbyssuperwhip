@@ -1,6 +1,7 @@
 import Hero from "@/components/WhyChoose/Hero";
 import Trust from "@/components/WhyChoose/Trust";
 import Features from "@/components/WhyChoose/Features";
+import CTA from "@/components/WhyChoose/CTA";
 
 
 export default function WhyChoosePage() {
@@ -23,6 +24,8 @@ export default function WhyChoosePage() {
         <Trust />
 
         <Features />
+
+        <CTA />
     </main>
   );
 }

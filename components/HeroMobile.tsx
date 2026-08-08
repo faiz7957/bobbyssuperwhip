@@ -288,7 +288,7 @@ export default function HeroMobile() {
               repeat: Infinity,
               ease: "easeInOut",
             }}
-            className="pointer-events-none absolute bottom-16 h-80 w-80 rounded-full bg-yellow-300/35 blur-3xl"
+            className="pointer-events-none absolute bottom-16 h-80 w-80 rounded-full bg-yellow-300/15 blur-3xl"
           />
 
           {/* Secondary glow */}
