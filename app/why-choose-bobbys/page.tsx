@@ -5,12 +5,14 @@ import CTA from "@/components/WhyChoose/CTA";
 
 export default function WhyChoosePage() {
   return (
-    <main>
+    <main className="min-h-screen bg-white">
       {/* Breadcrumb */}
-      <div className="mx-auto max-w-7xl px-6 pt-20 xl:px-12">
-        <p className="text-sm text-slate-600">
-          Home › Why Choose Bobby&apos;s Super Whip
-        </p>
+      <div className="bg-white">
+        <div className="mx-auto max-w-[1060px] px-6 py-10">
+          <p className="text-sm text-slate-600">
+            Home › Why Choose Bobby's Super Whip
+          </p>
+        </div>
       </div>
 
       {/* Hero */}
