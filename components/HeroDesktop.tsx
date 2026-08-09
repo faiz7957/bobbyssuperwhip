@@ -8,6 +8,8 @@ import {
   BadgeCheck,
   MapPin,
   IceCreamCone,
+  CalendarDays,
+  ChevronRight,
 } from "lucide-react";
 import { Baloo_2 } from "next/font/google";
 
@@ -110,220 +112,251 @@ export default function HeroDesktop() {
 
       </div>
 
+      {/* Main Content */}
 
-      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center justify-between px-12 xl:px-20">{/* Left Side */}
+      <div className="relative z-10 mx-auto flex min-h-screen max-w-7xl items-center justify-between px-12 xl:px-20">
 
-<div className="max-w-xl -mr-8">
-  <motion.h1
-    initial={{ opacity: 0, y: 30 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{
-  delay: 0.15,
-  duration: 0.7,
-  ease: "easeOut",
-}}
-    className={`${baloo.className} leading-[0.82]`}
-  >
-    <span
-      className="block text-[112px] font-extrabold tracking-tight text-[#57C7FF]"
-      style={{
-        textShadow: `
-          -2px -2px 0 #fff,
-           2px -2px 0 #fff,
-          -2px  2px 0 #fff,
-           2px  2px 0 #fff,
-           0px 6px 12px rgba(0,0,0,0.12)
-        `,
-      }}
-    >
-      Bobby&apos;s
-    </span>
+        {/* Left Side */}
 
-    <span
-      className="-mt-3 block text-[100px] font-extrabold tracking-tight text-amber-400"
-      style={{
-        textShadow: `
-          -2px -2px 0 #fff,
-           2px -2px 0 #fff,
-          -2px  2px 0 #fff,
-           2px  2px 0 #fff,
-           0px 6px 12px rgba(0,0,0,0.12)
-        `,
-      }}
-    >
-      Super Whip
-    </span>
-  </motion.h1>
+        <div className="max-w-xl -mr-8">
 
-  <motion.h2
-    initial={{ opacity: 0, y: 25 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{
-  delay: 0.3,
-  duration: 0.7,
-  ease: "easeOut",
-}}
-    className="mt-7 text-[32px] font-semibold leading-tight opacity-90"
-  >
-    <span className="text-slate-700">
-      It's Not A Dream,
-    </span>
+          {/* Heading */}
 
-    <br />
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.15,
+              duration: 0.7,
+              ease: "easeOut",
+            }}
+            className={`${baloo.className} leading-[0.82]`}
+          >
+            <span
+              className="block text-[112px] font-extrabold tracking-tight text-[#57C7FF]"
+              style={{
+                textShadow: `
+                  -2px -2px 0 #fff,
+                   2px -2px 0 #fff,
+                  -2px  2px 0 #fff,
+                   2px  2px 0 #fff,
+                   0px 6px 12px rgba(0,0,0,0.12)
+                `,
+              }}
+            >
+              Bobby&apos;s
+            </span>
 
-    <span className="text-sky-400">
-      It's Bobby&apos;s Ice Cream!
-    </span>
-  </motion.h2>
+            <span
+              className="-mt-3 block text-[100px] font-extrabold tracking-tight text-amber-400"
+              style={{
+                textShadow: `
+                  -2px -2px 0 #fff,
+                   2px -2px 0 #fff,
+                  -2px  2px 0 #fff,
+                   2px  2px 0 #fff,
+                   0px 6px 12px rgba(0,0,0,0.12)
+                `,
+              }}
+            >
+              Super Whip
+            </span>
+          </motion.h1>
 
-  <motion.p
-  initial={{ opacity: 0, y: 25 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{
-    delay: 0.45,
-    duration: 0.7,
-    ease: "easeOut",
-  }}
-  className="mt-8 max-w-lg text-xl leading-relaxed text-slate-700"
->
-  Hire Bobby&apos;s Super Whip for premium whippy ice cream, luxury sundaes
-  and refreshing slush at weddings, birthdays, schools, nurseries,
-  festivals and corporate events across Walsall and the West Midlands.
-  Fully insured with a 5-Star Food Hygiene Rating.
-</motion.p>
+          {/* Tagline */}
 
-<div className="mt-8 grid max-w-lg grid-cols-2 gap-4">
+          <motion.h2
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.3,
+              duration: 0.7,
+              ease: "easeOut",
+            }}
+            className="mt-7 text-[32px] font-semibold leading-tight opacity-90"
+          >
+            <span className="text-slate-700">
+              It's Not A Dream,
+            </span>
 
-  <div className="flex h-12 items-center justify-center gap-2 rounded-full bg-white/90 shadow-md backdrop-blur-sm">
-    <IceCreamCone className="h-5 w-5 text-sky-500" />
-    <span className="text-sm font-semibold text-slate-700">
-      Ice Cream Van Hire
-    </span>
-  </div>
+            <br />
 
-  <div className="flex h-12 items-center justify-center gap-2 rounded-full bg-white/90 shadow-md backdrop-blur-sm">
-    <MapPin className="h-5 w-5 text-sky-500" />
-    <span className="text-sm font-semibold text-slate-700">
-      Walsall &amp; West Midlands
-    </span>
-  </div>
+            <span className="text-sky-400">
+              It's Bobby&apos;s Ice Cream!
+            </span>
+          </motion.h2>
 
-  <div className="flex h-12 items-center justify-center gap-2 rounded-full bg-white/90 shadow-md backdrop-blur-sm">
-    <BadgeCheck className="h-5 w-5 text-sky-500" />
-    <span className="text-sm font-semibold text-slate-700">
-      5-Star Food Hygiene
-    </span>
-  </div>
+          {/* Description */}
 
-  <div className="flex h-12 items-center justify-center gap-2 rounded-full bg-white/90 shadow-md backdrop-blur-sm">
-    <ShieldCheck className="h-5 w-5 text-sky-500" />
-    <span className="text-sm font-semibold text-slate-700">
-      £10M Public Liability
-    </span>
-  </div>
+          <motion.p
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.45,
+              duration: 0.7,
+              ease: "easeOut",
+            }}
+            className="mt-8 max-w-lg text-xl leading-relaxed text-slate-700"
+          >
+            Hire Bobby&apos;s Super Whip for premium whippy ice cream,
+            luxury sundaes and refreshing slush at weddings, birthdays,
+            schools, nurseries, festivals and corporate events across
+            Walsall and the West Midlands. Fully insured with a 5-Star
+            Food Hygiene Rating.
+          </motion.p>
 
-</div>
-  <motion.div
-    initial={{ opacity: 0, y: 25 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{
-  delay: 0.6,
-  duration: 0.7,
-  ease: "easeOut",
-}}
-    className="mt-12 flex gap-5"
-  >
-    <Link
-      href="/book"
-      className="flex w-64 justify-center rounded-2xl bg-amber-400 px-8 py-4 font-bold text-slate-900 shadow-xl transition hover:scale-105"
-    >
-      Get a Quote
-    </Link>
+          {/* Trust Badges */}
 
-    <Link
-  href="/#gallery"
-  className="flex w-64 justify-center rounded-2xl border-2 border-sky-500 bg-white px-8 py-4 font-bold text-slate-900 shadow-xl transition duration-300 hover:scale-105 hover:bg-sky-500 hover:text-white"
->
-  View Customer Favourites
-</Link>
-  </motion.div>
-</div>
+          <div className="mt-8 grid max-w-lg grid-cols-2 gap-4">
 
-{/* Van */}
+            <div className="flex h-12 items-center justify-center gap-2 rounded-full bg-white/90 shadow-md backdrop-blur-sm">
+              <IceCreamCone className="h-5 w-5 text-sky-500" />
+              <span className="text-sm font-semibold text-slate-700">
+                Ice Cream Van Hire
+              </span>
+            </div>
 
-<div className="relative w-[62%] -mr-6 overflow-visible">
+            <div className="flex h-12 items-center justify-center gap-2 rounded-full bg-white/90 shadow-md backdrop-blur-sm">
+              <MapPin className="h-5 w-5 text-sky-500" />
+              <span className="text-sm font-semibold text-slate-700">
+                Walsall &amp; West Midlands
+              </span>
+            </div>
 
-  {/* Animated yellow glow */}
+            <div className="flex h-12 items-center justify-center gap-2 rounded-full bg-white/90 shadow-md backdrop-blur-sm">
+              <BadgeCheck className="h-5 w-5 text-sky-500" />
+              <span className="text-sm font-semibold text-slate-700">
+                5-Star Food Hygiene
+              </span>
+            </div>
 
-  <motion.div
-    animate={{
-      opacity: [0.35, 0.55, 0.35],
-      scale: [1, 1.08, 1],
-    }}
-    transition={{
-      duration: 5,
-      repeat: Infinity,
-      ease: "easeInOut",
-    }}
-    className="absolute bottom-12 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-yellow-300/35 blur-[120px]"
-  />
+            <div className="flex h-12 items-center justify-center gap-2 rounded-full bg-white/90 shadow-md backdrop-blur-sm">
+              <ShieldCheck className="h-5 w-5 text-sky-500" />
+              <span className="text-sm font-semibold text-slate-700">
+                £10M Public Liability
+              </span>
+            </div>
 
-  {/* Blue glow */}
+          </div>
 
-  <div className="absolute bottom-8 left-1/2 h-[420px] w-[620px] -translate-x-1/2 rounded-full bg-sky-300/25 blur-[140px]" />
+          {/* Buttons */}
 
-  {/* White glow */}
+          <motion.div
+            initial={{ opacity: 0, y: 25 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              delay: 0.6,
+              duration: 0.7,
+              ease: "easeOut",
+            }}
+            className="mt-12 flex gap-5"
+          >
 
-  <div className="absolute bottom-0 left-1/2 h-[460px] w-[760px] -translate-x-1/2 rounded-full bg-white/55 blur-[160px]" />
+            {/* Get a Quote */}
 
-  {/* Ground shadow */}
+            <Link
+              href="/book"
+              className="flex w-64 items-center justify-center gap-3 rounded-2xl bg-amber-400 px-8 py-4 font-bold text-slate-900 shadow-xl transition hover:scale-105"
+            >
+              <CalendarDays className="h-6 w-6" />
 
-  <div className="absolute bottom-3 left-1/2 h-10 w-[420px] -translate-x-1/2 rounded-full bg-slate-900/15 blur-xl" />
+              <span>
+                Get a Quote
+              </span>
 
-  {/* Floating van */}
+              <ChevronRight className="h-5 w-5" />
+            </Link>
 
-  <motion.div
-    animate={{
-      y: [0, -10, 0],
-    }}
-    transition={{
-      duration: 4,
-      repeat: Infinity,
-      ease: "easeInOut",
-    }}
-    className="relative z-30"
-  >
-    <Image
-      src="/images/van-cutout-v2.png"
-      alt="Bobby's Super Whip Ice Cream Van"
-      width={1900}
-      height={1200}
-      priority
-      className="mt-8 w-full drop-shadow-[0_40px_65px_rgba(0,0,0,0.25)]"
-    />
-  </motion.div>
+            {/* Customer Favourites */}
 
-</div>
+            <Link
+              href="/#gallery"
+              className="flex w-64 items-center justify-center gap-3 rounded-2xl border-2 border-sky-500 bg-white px-8 py-4 font-bold text-slate-900 shadow-xl transition duration-300 hover:scale-105 hover:bg-sky-500 hover:text-white"
+            >
+              <IceCreamCone className="h-6 w-6" />
 
-{/* End main content */}
+              <span>
+                View Customer Favourites
+              </span>
+            </Link>
 
-</div>
+          </motion.div>
 
-{/* Wave */}
+        </div>
 
-<div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
-  <svg
-    viewBox="0 0 1440 320"
-    preserveAspectRatio="none"
-    className="h-40 w-full"
-  >
-    <path
-      fill="#ffffff"
-      d="M0,250 C120,245 220,180 340,205 C500,240 650,310 820,250 C1020,180 1180,110 1440,150 L1440,320 L0,320 Z"
-    />
-  </svg>
-</div>
+        {/* Van */}
 
-</section>
-);
+        <div className="relative w-[62%] -mr-6 overflow-visible">
+
+          {/* Animated yellow glow */}
+
+          <motion.div
+            animate={{
+              opacity: [0.35, 0.55, 0.35],
+              scale: [1, 1.08, 1],
+            }}
+            transition={{
+              duration: 5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="absolute bottom-12 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-yellow-300/35 blur-[120px]"
+          />
+
+          {/* Blue glow */}
+
+          <div className="absolute bottom-8 left-1/2 h-[420px] w-[620px] -translate-x-1/2 rounded-full bg-sky-300/25 blur-[140px]" />
+
+          {/* White glow */}
+
+          <div className="absolute bottom-0 left-1/2 h-[460px] w-[760px] -translate-x-1/2 rounded-full bg-white/55 blur-[160px]" />
+
+          {/* Ground shadow */}
+
+          <div className="absolute bottom-3 left-1/2 h-10 w-[420px] -translate-x-1/2 rounded-full bg-slate-900/15 blur-xl" />
+
+          {/* Floating van */}
+
+          <motion.div
+            animate={{
+              y: [0, -10, 0],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+            className="relative z-30"
+          >
+            <Image
+              src="/images/van-cutout-v2.png"
+              alt="Bobby's Super Whip Ice Cream Van"
+              width={1900}
+              height={1200}
+              priority
+              className="mt-8 w-full drop-shadow-[0_40px_65px_rgba(0,0,0,0.25)]"
+            />
+          </motion.div>
+
+        </div>
+
+      </div>
+
+      {/* Wave */}
+
+      <div className="absolute bottom-0 left-0 w-full overflow-hidden leading-none">
+        <svg
+          viewBox="0 0 1440 320"
+          preserveAspectRatio="none"
+          className="h-40 w-full"
+        >
+          <path
+            fill="#ffffff"
+            d="M0,250 C120,245 220,180 340,205 C500,240 650,310 820,250 C1020,180 1180,110 1440,150 L1440,320 L0,320 Z"
+          />
+        </svg>
+      </div>
+
+    </section>
+  );
 }
