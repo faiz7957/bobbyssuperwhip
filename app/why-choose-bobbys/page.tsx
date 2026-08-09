@@ -3,29 +3,27 @@ import Trust from "@/components/WhyChoose/Trust";
 import Features from "@/components/WhyChoose/Features";
 import CTA from "@/components/WhyChoose/CTA";
 
-
 export default function WhyChoosePage() {
   return (
-    <main className="bg-white">
+    <main>
       {/* Breadcrumb */}
-      <section className="border-b border-slate-200 bg-white/80 backdrop-blur">
-        <div className="mx-auto max-w-7xl px-6 py-4">
-          <p className="text-sm text-slate-500">
-            Home <span className="mx-2">›</span>
-            <span className="font-semibold text-slate-800">
-              Why Choose Bobby&apos;s Super Whip
-            </span>
-          </p>
-        </div>
-      </section>
+      <div className="mx-auto max-w-7xl px-6 pt-20 xl:px-12">
+        <p className="text-sm text-slate-600">
+          Home › Why Choose Bobby&apos;s Super Whip
+        </p>
+      </div>
 
-        <Hero />
+      {/* Hero */}
+      <Hero />
 
-        <Trust />
+      {/* Trust */}
+      <Trust />
 
-        <Features />
+      {/* Features */}
+      <Features />
 
-        <CTA />
+      {/* Call To Action */}
+      <CTA />
     </main>
   );
 }

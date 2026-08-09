@@ -3,12 +3,6 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import { Fredoka } from "next/font/google";
-
-const fredoka = Fredoka({
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-});
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -22,34 +16,68 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 z-50 w-full border-b border-slate-200/60 bg-white/90 backdrop-blur-md">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-        {/* Logo */}
+    <header
+      style={{
+        position: "relative",
+        zIndex: 9999,
+        width: "100%",
+        height: "80px",
+        background: "#ffffff",
+        borderBottom: "1px solid #e2e8f0",
+      }}
+    >
+      <div
+        style={{
+          position: "relative",
+          width: "100%",
+          maxWidth: "1060px",
+          height: "80px",
+          margin: "0 auto",
+          display: "flex",
+          alignItems: "center",
+        }}
+      >
+        {/* =====================================================
+            LOGO
+            ===================================================== */}
         <Link
           href="/"
-          className="flex items-center gap-3 transition hover:opacity-90"
+          aria-label="Bobby's Super Whip Home"
+          style={{
+            position: "absolute",
+            left: "-250px",
+            top: "0",
+            width: "150px",
+            height: "150px",
+            zIndex: 10000,
+            display: "block",
+          }}
         >
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-sky-600 text-2xl shadow-lg">
-            🍦
-          </div>
-
-          <div className="flex flex-col leading-none">
-            <span
-              className={`${fredoka.className} text-3xl font-bold text-sky-600`}
-            >
-              Bobby&apos;s
-            </span>
-
-            <span
-              className={`${fredoka.className} -mt-1 text-sm font-bold uppercase tracking-[0.35em] text-amber-400`}
-            >
-              SUPER WHIP
-            </span>
-          </div>
+          <img
+            src="/images/bobbys-super-whip-logo.png"
+            alt="Bobby's Super Whip"
+            width="150"
+            height="150"
+            style={{
+              width: "150px",
+              height: "150px",
+              display: "block",
+              objectFit: "contain",
+            }}
+          />
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden items-center gap-8 md:flex">
+        {/* =====================================================
+            DESKTOP NAVIGATION
+            ===================================================== */}
+        <nav
+          className="hidden md:flex"
+          style={{
+            marginLeft: "auto",
+            alignItems: "center",
+            gap: "32px",
+          }}
+        >
           {navLinks.map((link) => (
             <Link
               key={link.name}
@@ -68,11 +96,14 @@ export default function Navbar() {
           </Link>
         </nav>
 
-        {/* Mobile Menu Button */}
+        {/* =====================================================
+            MOBILE MENU BUTTON
+            ===================================================== */}
         <button
-          className="md:hidden"
+          className="ml-auto md:hidden"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle Menu"
+          aria-expanded={isOpen}
         >
           {isOpen ? (
             <X className="h-7 w-7 text-slate-700" />
@@ -82,7 +113,9 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* =====================================================
+          MOBILE MENU
+          ===================================================== */}
       {isOpen && (
         <div className="border-t border-slate-200 bg-white shadow-lg md:hidden">
           <nav className="flex flex-col px-6 py-5">
