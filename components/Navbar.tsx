@@ -20,11 +20,25 @@ export default function Navbar() {
       <style>{`
         .bobbys-logo {
           left: -250px;
+          width: 150px;
+          height: 150px;
+        }
+
+        .bobbys-logo img {
+          width: 150px;
+          height: 150px;
         }
 
         @media (max-width: 767px) {
           .bobbys-logo {
             left: 0 !important;
+            width: 120px !important;
+            height: 120px !important;
+          }
+
+          .bobbys-logo img {
+            width: 120px !important;
+            height: 120px !important;
           }
         }
       `}</style>
@@ -60,8 +74,6 @@ export default function Navbar() {
             style={{
               position: "absolute",
               top: "0",
-              width: "150px",
-              height: "150px",
               zIndex: 10000,
               display: "block",
             }}
@@ -72,8 +84,6 @@ export default function Navbar() {
               width="150"
               height="150"
               style={{
-                width: "150px",
-                height: "150px",
                 display: "block",
                 objectFit: "contain",
               }}
