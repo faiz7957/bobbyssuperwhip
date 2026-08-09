@@ -30,6 +30,14 @@ export default function Navbar() {
           height: 150px;
         }
 
+        /* Smaller desktop / windowed Chrome */
+        @media (max-width: 1100px) and (min-width: 768px) {
+          .bobbys-logo {
+            left: 0 !important;
+          }
+        }
+
+        /* Mobile */
         @media (max-width: 767px) {
           .bobbys-logo {
             left: 0 !important;
