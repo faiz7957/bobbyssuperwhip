@@ -29,6 +29,12 @@ export default function Navbar() {
           height: 150px;
         }
 
+        @media (min-width: 768px) and (max-width: 1350px) {
+          .bobbys-logo {
+            left: 0 !important;
+          }
+        }
+
         @media (max-width: 767px) {
           .bobbys-logo {
             left: 0 !important;
