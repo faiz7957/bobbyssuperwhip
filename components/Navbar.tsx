@@ -20,6 +20,7 @@ export default function Navbar() {
       <style>{`
         .bobbys-logo {
           left: -250px;
+          top: 0;
           width: 150px;
           height: 150px;
         }
@@ -29,15 +30,10 @@ export default function Navbar() {
           height: 150px;
         }
 
-        @media (min-width: 768px) and (max-width: 1350px) {
-          .bobbys-logo {
-            left: 0 !important;
-          }
-        }
-
         @media (max-width: 767px) {
           .bobbys-logo {
             left: 0 !important;
+            top: 20px !important;
             width: 100px !important;
             height: 100px !important;
           }
@@ -70,14 +66,16 @@ export default function Navbar() {
             alignItems: "center",
           }}
         >
-          {/* Logo */}
+          {/* =====================================================
+              LOGO
+              ===================================================== */}
+
           <Link
             href="/"
             aria-label="Bobby's Super Whip Home"
             className="bobbys-logo"
             style={{
               position: "absolute",
-              top: "0",
               zIndex: 10000,
               display: "block",
             }}
@@ -94,7 +92,10 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* =====================================================
+              DESKTOP NAVIGATION
+              ===================================================== */}
+
           <nav
             className="hidden md:flex"
             style={{
@@ -121,7 +122,10 @@ export default function Navbar() {
             </Link>
           </nav>
 
-          {/* Mobile Menu Button */}
+          {/* =====================================================
+              MOBILE MENU BUTTON
+              ===================================================== */}
+
           <button
             className="ml-auto md:hidden"
             onClick={() => setIsOpen(!isOpen)}
@@ -136,7 +140,10 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* =====================================================
+            MOBILE MENU
+            ===================================================== */}
+
         {isOpen && (
           <div className="border-t border-slate-200 bg-white shadow-lg md:hidden">
             <nav className="flex flex-col px-6 py-5">
