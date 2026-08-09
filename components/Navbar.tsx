@@ -16,115 +16,86 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header
-      style={{
-        position: "relative",
-        zIndex: 9999,
-        width: "100%",
-        height: "80px",
-        background: "#ffffff",
-        borderBottom: "1px solid #e2e8f0",
-      }}
-    >
-      <div
+    <>
+      <style>{`
+        .bobbys-logo {
+          left: -250px;
+        }
+
+        @media (max-width: 767px) {
+          .bobbys-logo {
+            left: 0 !important;
+          }
+        }
+      `}</style>
+
+      <header
         style={{
           position: "relative",
+          zIndex: 9999,
           width: "100%",
-          maxWidth: "1060px",
           height: "80px",
-          margin: "0 auto",
-          display: "flex",
-          alignItems: "center",
+          background: "#ffffff",
+          borderBottom: "1px solid #e2e8f0",
         }}
       >
-        {/* =====================================================
-            LOGO
-            ===================================================== */}
-        <Link
-          href="/"
-          aria-label="Bobby's Super Whip Home"
+        <div
           style={{
-            position: "absolute",
-            left: "-250px",
-            top: "0",
-            width: "150px",
-            height: "150px",
-            zIndex: 10000,
-            display: "block",
+            position: "relative",
+            width: "100%",
+            maxWidth: "1060px",
+            height: "80px",
+            margin: "0 auto",
+            display: "flex",
+            alignItems: "center",
           }}
         >
-          <img
-            src="/images/bobbys-super-whip-logo.png"
-            alt="Bobby's Super Whip"
-            width="150"
-            height="150"
+          {/* =====================================================
+              LOGO
+              ===================================================== */}
+          <Link
+            href="/"
+            aria-label="Bobby's Super Whip Home"
+            className="bobbys-logo"
             style={{
+              position: "absolute",
+              top: "0",
               width: "150px",
               height: "150px",
+              zIndex: 10000,
               display: "block",
-              objectFit: "contain",
             }}
-          />
-        </Link>
-
-        {/* =====================================================
-            DESKTOP NAVIGATION
-            ===================================================== */}
-        <nav
-          className="hidden md:flex"
-          style={{
-            marginLeft: "auto",
-            alignItems: "center",
-            gap: "32px",
-          }}
-        >
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="font-medium text-slate-700 transition-colors hover:text-sky-600"
-            >
-              {link.name}
-            </Link>
-          ))}
-
-          <Link
-            href="/book"
-            className="rounded-full bg-sky-600 px-6 py-3 font-semibold text-white transition hover:bg-sky-700"
           >
-            Get a Quote
+            <img
+              src="/images/bobbys-super-whip-logo.png"
+              alt="Bobby's Super Whip"
+              width="150"
+              height="150"
+              style={{
+                width: "150px",
+                height: "150px",
+                display: "block",
+                objectFit: "contain",
+              }}
+            />
           </Link>
-        </nav>
 
-        {/* =====================================================
-            MOBILE MENU BUTTON
-            ===================================================== */}
-        <button
-          className="ml-auto md:hidden"
-          onClick={() => setIsOpen(!isOpen)}
-          aria-label="Toggle Menu"
-          aria-expanded={isOpen}
-        >
-          {isOpen ? (
-            <X className="h-7 w-7 text-slate-700" />
-          ) : (
-            <Menu className="h-7 w-7 text-slate-700" />
-          )}
-        </button>
-      </div>
-
-      {/* =====================================================
-          MOBILE MENU
-          ===================================================== */}
-      {isOpen && (
-        <div className="border-t border-slate-200 bg-white shadow-lg md:hidden">
-          <nav className="flex flex-col px-6 py-5">
+          {/* =====================================================
+              DESKTOP NAVIGATION
+              ===================================================== */}
+          <nav
+            className="hidden md:flex"
+            style={{
+              marginLeft: "auto",
+              alignItems: "center",
+              gap: "32px",
+            }}
+          >
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="py-3 text-lg font-medium text-slate-700 hover:text-sky-600"
+                className="font-medium text-slate-700 transition-colors hover:text-sky-600"
               >
                 {link.name}
               </Link>
@@ -132,14 +103,57 @@ export default function Navbar() {
 
             <Link
               href="/book"
-              onClick={() => setIsOpen(false)}
-              className="mt-4 rounded-full bg-sky-600 py-3 text-center font-semibold text-white hover:bg-sky-700"
+              className="rounded-full bg-sky-600 px-6 py-3 font-semibold text-white transition hover:bg-sky-700"
             >
               Get a Quote
             </Link>
           </nav>
+
+          {/* =====================================================
+              MOBILE MENU BUTTON
+              ===================================================== */}
+          <button
+            className="ml-auto md:hidden"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle Menu"
+            aria-expanded={isOpen}
+          >
+            {isOpen ? (
+              <X className="h-7 w-7 text-slate-700" />
+            ) : (
+              <Menu className="h-7 w-7 text-slate-700" />
+            )}
+          </button>
         </div>
-      )}
-    </header>
+
+        {/* =====================================================
+            MOBILE MENU
+            ===================================================== */}
+        {isOpen && (
+          <div className="border-t border-slate-200 bg-white shadow-lg md:hidden">
+            <nav className="flex flex-col px-6 py-5">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="py-3 text-lg font-medium text-slate-700 hover:text-sky-600"
+                >
+                  {link.name}
+                </Link>
+              ))}
+
+              <Link
+                href="/book"
+                onClick={() => setIsOpen(false)}
+                className="mt-4 rounded-full bg-sky-600 py-3 text-center font-semibold text-white hover:bg-sky-700"
+              >
+                Get a Quote
+              </Link>
+            </nav>
+          </div>
+        )}
+      </header>
+    </>
   );
 }
