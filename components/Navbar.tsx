@@ -32,13 +32,13 @@ export default function Navbar() {
         @media (max-width: 767px) {
           .bobbys-logo {
             left: 0 !important;
-            width: 120px !important;
-            height: 120px !important;
+            width: 100px !important;
+            height: 100px !important;
           }
 
           .bobbys-logo img {
-            width: 120px !important;
-            height: 120px !important;
+            width: 100px !important;
+            height: 100px !important;
           }
         }
       `}</style>
@@ -64,9 +64,7 @@ export default function Navbar() {
             alignItems: "center",
           }}
         >
-          {/* =====================================================
-              LOGO
-              ===================================================== */}
+          {/* Logo */}
           <Link
             href="/"
             aria-label="Bobby's Super Whip Home"
@@ -90,9 +88,7 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* =====================================================
-              DESKTOP NAVIGATION
-              ===================================================== */}
+          {/* Desktop Navigation */}
           <nav
             className="hidden md:flex"
             style={{
@@ -119,9 +115,7 @@ export default function Navbar() {
             </Link>
           </nav>
 
-          {/* =====================================================
-              MOBILE MENU BUTTON
-              ===================================================== */}
+          {/* Mobile Menu Button */}
           <button
             className="ml-auto md:hidden"
             onClick={() => setIsOpen(!isOpen)}
@@ -136,9 +130,7 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* =====================================================
-            MOBILE MENU
-            ===================================================== */}
+        {/* Mobile Menu */}
         {isOpen && (
           <div className="border-t border-slate-200 bg-white shadow-lg md:hidden">
             <nav className="flex flex-col px-6 py-5">
