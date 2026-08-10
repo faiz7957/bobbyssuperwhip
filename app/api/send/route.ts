@@ -47,16 +47,22 @@ export async function POST(req: Request) {
     const turnstileResult = await turnstileResponse.json();
 
     if (!turnstileResult.success) {
-      return Response.json(
-        {
-          success: false,
-          error: "Security verification failed. Please try again.",
-        },
-        {
-          status: 403,
-        }
-      );
+  console.error("TURNSTILE VERIFICATION FAILED:", {
+    errorCodes: turnstileResult["error-codes"],
+    hostname: turnstileResult.hostname,
+    action: turnstileResult.action,
+  });
+
+  return Response.json(
+    {
+      success: false,
+      error: "Security verification failed. Please try again.",
+    },
+    {
+      status: 403,
     }
+  );
+}
 
     // Send the booking enquiry
     const { data, error } = await resend.emails.send({
