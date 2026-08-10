@@ -38,7 +38,7 @@ export async function POST(req: Request) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          secret: process.env.TURNSTILE_SECRET_KEY,
+          secret: process.env.TURNSTILE_SECRET,
           response: turnstileToken,
         }),
       }
@@ -87,10 +87,12 @@ export async function POST(req: Request) {
     });
 
     if (error) {
+      console.error("RESEND ERROR:", error);
+
       return Response.json(
         {
           success: false,
-          error,
+          error: "Unable to send booking enquiry.",
         },
         {
           status: 500,
