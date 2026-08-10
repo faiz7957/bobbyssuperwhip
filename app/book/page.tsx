@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   ShieldCheck,
   BadgeCheck,
@@ -20,6 +20,23 @@ import {
 } from "lucide-react";
 
 import Breadcrumb from "@/components/Breadcrumb";
+
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (
+        element: HTMLElement,
+        options: {
+          sitekey: string;
+          callback?: (token: string) => void;
+          "expired-callback"?: () => void;
+          "error-callback"?: () => void;
+        }
+      ) => string;
+      reset: (widgetId?: string) => void;
+    };
+  }
+}
 
 function Feature({
   icon,
@@ -65,6 +82,65 @@ export default function BookPage() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
+  const [turnstileToken, setTurnstileToken] = useState("");
+
+  const turnstileRef = useRef<HTMLDivElement>(null);
+  const turnstileWidgetId = useRef<string | null>(null);
+
+  useEffect(() => {
+    const renderTurnstile = () => {
+      if (
+        !turnstileRef.current ||
+        !window.turnstile ||
+        turnstileWidgetId.current
+      ) {
+        return;
+      }
+
+      const siteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
+
+      if (!siteKey) {
+        setError("Security verification is not configured.");
+        return;
+      }
+
+      turnstileWidgetId.current = window.turnstile.render(
+        turnstileRef.current,
+        {
+          sitekey: siteKey,
+          callback: (token: string) => {
+            setTurnstileToken(token);
+            setError("");
+          },
+          "expired-callback": () => {
+            setTurnstileToken("");
+          },
+          "error-callback": () => {
+            setTurnstileToken("");
+            setError(
+              "The security check could not be completed. Please try again."
+            );
+          },
+        }
+      );
+    };
+
+    if (window.turnstile) {
+      renderTurnstile();
+      return;
+    }
+
+    const interval = window.setInterval(() => {
+      if (window.turnstile) {
+        renderTurnstile();
+        window.clearInterval(interval);
+      }
+    }, 100);
+
+    return () => {
+      window.clearInterval(interval);
+    };
+  }, []);
 
   const handleChange = (e: any) =>
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -86,21 +162,41 @@ export default function BookPage() {
       return;
     }
 
+    if (!turnstileToken) {
+      setError("Please complete the security check before sending your enquiry.");
+      return;
+    }
+
     setLoading(true);
 
     try {
       const r = await fetch("/api/send", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...form,
+          turnstileToken,
+        }),
       });
 
       const d = await r.json();
 
-      if (!r.ok || !d.success) throw new Error();
+      if (!r.ok || !d.success) {
+        throw new Error();
+      }
 
       setSuccess("Thanks! Your enquiry has been sent successfully.");
       setForm(initial);
+      setTurnstileToken("");
+
+      if (
+        window.turnstile &&
+        turnstileWidgetId.current
+      ) {
+        window.turnstile.reset(turnstileWidgetId.current);
+      }
     } catch {
       setError("Sorry, something went wrong. Please try again.");
     } finally {
@@ -268,9 +364,7 @@ export default function BookPage() {
                     className={`${inputClass} pl-12 text-slate-500`}
                     style={{ color: "#64748b" }}
                   >
-                    <option value="" className="text-slate-500">
-                      Event Type
-                    </option>
+                    <option value="">Event Type</option>
                     <option>Birthday Party</option>
                     <option>Wedding</option>
                     <option>School</option>
@@ -342,6 +436,11 @@ export default function BookPage() {
                     placeholder="Tell us about your event..."
                     className={`${inputClass} pl-12`}
                   />
+                </div>
+
+                {/* Cloudflare Turnstile */}
+                <div className="flex justify-center pt-2">
+                  <div ref={turnstileRef} />
                 </div>
 
                 <button

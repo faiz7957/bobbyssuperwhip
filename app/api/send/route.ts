@@ -13,8 +13,52 @@ export async function POST(req: Request) {
       venue,
       guests,
       message,
+      turnstileToken,
     } = await req.json();
 
+    // Check that Turnstile token exists
+    if (!turnstileToken) {
+      return Response.json(
+        {
+          success: false,
+          error: "Security verification required.",
+        },
+        {
+          status: 400,
+        }
+      );
+    }
+
+    // Verify Turnstile token with Cloudflare
+    const turnstileResponse = await fetch(
+      "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          secret: process.env.TURNSTILE_SECRET,
+          response: turnstileToken,
+        }),
+      }
+    );
+
+    const turnstileResult = await turnstileResponse.json();
+
+    if (!turnstileResult.success) {
+      return Response.json(
+        {
+          success: false,
+          error: "Security verification failed. Please try again.",
+        },
+        {
+          status: 403,
+        }
+      );
+    }
+
+    // Send the booking enquiry
     const { data, error } = await resend.emails.send({
       from: "Bobby's Super Whip <bookings@bobbyssuperwhip.co.uk>",
       to: ["bobbyssuperwhip@gmail.com"],
@@ -32,13 +76,13 @@ export async function POST(req: Request) {
         <p><strong>Event Type:</strong> ${eventType}</p>
         <p><strong>Event Date:</strong> ${eventDate}</p>
         <p><strong>Venue:</strong> ${venue}</p>
-        <p><strong>Guests:</strong> ${guests}</p>
+        <p><strong>Guests:</strong> ${guests || "Not provided"}</p>
 
         <hr>
 
         <p><strong>Message</strong></p>
 
-        <p>${message?.replace(/\n/g, "<br>")}</p>
+        <p>${message?.replace(/\n/g, "<br>") || ""}</p>
       `,
     });
 
@@ -59,10 +103,12 @@ export async function POST(req: Request) {
       data,
     });
   } catch (err) {
+    console.error("Booking enquiry error:", err);
+
     return Response.json(
       {
         success: false,
-        error: err,
+        error: "Unable to send booking enquiry.",
       },
       {
         status: 500,
