@@ -86,6 +86,7 @@ export default function BookPage() {
 
   const turnstileRef = useRef<HTMLDivElement>(null);
   const turnstileWidgetId = useRef<string | null>(null);
+  const successRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const renderTurnstile = () => {
@@ -142,6 +143,15 @@ export default function BookPage() {
     };
   }, []);
 
+  useEffect(() => {
+    if (success && successRef.current) {
+      successRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+  }, [success]);
+
   const handleChange = (e: any) =>
     setForm({ ...form, [e.target.name]: e.target.value });
 
@@ -191,10 +201,7 @@ export default function BookPage() {
       setForm(initial);
       setTurnstileToken("");
 
-      if (
-        window.turnstile &&
-        turnstileWidgetId.current
-      ) {
+      if (window.turnstile && turnstileWidgetId.current) {
         window.turnstile.reset(turnstileWidgetId.current);
       }
     } catch {
@@ -279,7 +286,10 @@ export default function BookPage() {
               </h2>
 
               {success && (
-                <div className="mb-6 rounded-2xl border border-green-200 bg-green-50 p-6 text-center shadow-sm">
+                <div
+                  ref={successRef}
+                  className="mb-6 rounded-2xl border border-green-200 bg-green-50 p-6 text-center shadow-sm"
+                >
                   <div className="mx-auto mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white">
                     ✓
                   </div>
