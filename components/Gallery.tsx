@@ -19,17 +19,28 @@ const galleryImages = [
     title: "Oreo Biscoff Sundae",
   },
   {
-  src: "/images/gallery/sherbet-sundae.jpg",
-  title: "Sherbet Sundae",
+    src: "/images/gallery/sherbet-sundae.jpg",
+    title: "Sherbet Sundae",
   },
-  
   {
     src: "/images/gallery/slush-machine.jpg",
     title: "Premium Slush",
   },
   {
-    src: "/images/gallery/luxury whippy.jpg",
+    src: "/images/gallery/luxury-whippy.jpg",
     title: "Luxury Whippy",
+  },
+  {
+    src: "/images/gallery/choc-and-nut-boat.jpg",
+    title: "Chocolate & Nut Sundae Boat",
+  },
+  {
+    src: "/images/gallery/choc-dip-cone.jpg",
+    title: "Chocolate-Dipped Cone",
+  },
+  {
+    src: "/images/gallery/choc-dip-sundae.jpg",
+    title: "Chocolate-Dipped Sundae",
   },
 ];
 
@@ -44,23 +55,23 @@ export default function Gallery() {
       >
         <div className="mx-auto max-w-7xl px-6">
           <div className="mb-16 text-center">
-      <div className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-white/90 px-6 shadow-md backdrop-blur-sm">
-  <Sparkles className="h-5 w-5 text-amber-400" />
-  <span className="text-sm font-semibold text-slate-700">
-    Customer Favourites
-  </span>
-</div>
+            <div className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-white/90 px-6 shadow-md backdrop-blur-sm">
+              <Sparkles className="h-5 w-5 text-amber-400" />
+              <span className="text-sm font-semibold text-slate-700">
+                Customer Favourites
+              </span>
+            </div>
 
             <h2 className="mt-6 text-5xl font-bold text-slate-800">
               Our Most Popular Treats.
             </h2>
 
-    <p className="mx-auto mt-5 max-w-3xl text-xl leading-relaxed text-slate-600">
-  Discover our customers' favourite treats, from premium whippy ice cream,
-  luxury sundaes and refreshing slush, freshly served at weddings,
-  birthdays, schools, nurseries, corporate events and festivals across
-  Walsall and the West Midlands.
-</p>
+            <p className="mx-auto mt-5 max-w-3xl text-xl leading-relaxed text-slate-600">
+              Discover our customers' favourite treats, from premium whippy
+              ice cream, luxury sundaes and refreshing slush, freshly served
+              at weddings, birthdays, schools, nurseries, corporate events
+              and festivals across Walsall and the West Midlands.
+            </p>
           </div>
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -68,7 +79,7 @@ export default function Gallery() {
               <button
                 key={image.src}
                 onClick={() => setIndex(i)}
-                className="group overflow-hidden rounded-3xl shadow-xl text-left"
+                className="group overflow-hidden rounded-3xl text-left shadow-xl"
               >
                 <div className="relative aspect-[4/5] overflow-hidden">
                   <Image
