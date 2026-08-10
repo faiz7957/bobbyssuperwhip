@@ -32,15 +32,15 @@ const galleryImages = [
   },
   {
     src: "/images/gallery/choc-and-nut-boat.jpg",
-    title: "Chocolate & Nut Sundae Boat",
+    title: "Choc & Nut Sundae Boat",
   },
   {
     src: "/images/gallery/choc-dip-cone.jpg",
-    title: "Chocolate-Dipped Cone",
+    title: "Choc Dip Cone",
   },
   {
     src: "/images/gallery/choc-dip-sundae.jpg",
-    title: "Chocolate-Dipped Sundae",
+    title: "Choc Dip Sundae",
   },
 ];
 
