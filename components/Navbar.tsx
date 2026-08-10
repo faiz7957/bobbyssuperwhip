@@ -154,7 +154,7 @@ export default function Navbar() {
 
         {isOpen && (
           <div className="border-t border-slate-200 bg-white shadow-lg md:hidden">
-            <nav className="flex flex-col px-6 py-5">
+            <nav className="flex flex-col px-6 pt-10 pb-5">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
