@@ -21,13 +21,13 @@ export default function Navbar() {
         .bobbys-logo {
           left: -250px;
           top: 0;
-          width: 150px;
-          height: 150px;
+          width: 201px;
+          height: 201px;
         }
 
         .bobbys-logo img {
-          width: 150px;
-          height: 150px;
+          width: 201px;
+          height: 155px;
         }
 
         /* Smaller desktop / windowed Chrome */
@@ -42,13 +42,13 @@ export default function Navbar() {
           .bobbys-logo {
             left: 0 !important;
             top: 20px !important;
-            width: 100px !important;
-            height: 100px !important;
+            width: 120px !important;
+            height: 120px !important;
           }
 
           .bobbys-logo img {
-            width: 100px !important;
-            height: 100px !important;
+            width: 120px !important;
+            height: 120px !important;
           }
         }
       `}</style>
@@ -91,8 +91,8 @@ export default function Navbar() {
             <img
               src="/images/bobbys-super-whip-logo.png"
               alt="Bobby's Super Whip"
-              width="150"
-              height="150"
+              width="201"
+              height="201"
               style={{
                 display: "block",
                 objectFit: "contain",
