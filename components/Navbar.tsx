@@ -9,7 +9,7 @@ const navLinks = [
   { name: "Why Bobby's?", href: "/why-choose-bobbys" },
   { name: "Customer Favourites", href: "/#gallery" },
   { name: "Events", href: "/#events" },
-  { name: "Contact", href: "/#contact" },
+  { name: "Contact", href: "/book" },
 ];
 
 export default function Navbar() {

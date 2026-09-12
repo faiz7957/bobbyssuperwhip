@@ -282,7 +282,7 @@ export default function BookPage() {
 
             <div className="rounded-3xl bg-white p-10 shadow-xl">
               <h2 className="mb-8 text-3xl font-bold text-slate-800">
-                Get My Quote
+                Contact for your no obligation Quote
               </h2>
 
               {success && (
