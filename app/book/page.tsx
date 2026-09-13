@@ -243,7 +243,6 @@ export default function BookPage() {
           </div>
 
           <div className="grid min-w-0 gap-12 lg:grid-cols-2">
-
             {/* Why Choose Bobby's */}
             <div className="min-w-0 rounded-3xl bg-white p-10 shadow-xl">
               <h2 className="text-4xl font-extrabold tracking-tight text-slate-900">
@@ -324,7 +323,6 @@ export default function BookPage() {
               )}
 
               <form onSubmit={handleSubmit} className="min-w-0 space-y-6">
-
                 {/* Name */}
                 <div className="relative min-w-0">
                   <User
@@ -396,8 +394,11 @@ export default function BookPage() {
                     <option>School</option>
                     <option>Nursery</option>
                     <option>Corporate Event</option>
-                    <option>Sports Club</option>
+                    <option>Fun Fair</option>
                     <option>Festival</option>
+                    <option>Charity Event</option>
+                    <option>Care Home</option>
+                    <option>Community Event</option>
                     <option>Other</option>
                   </select>
                 </div>
@@ -503,7 +504,6 @@ export default function BookPage() {
                   Your information is kept private and will only be used to
                   respond to your enquiry.
                 </p>
-
               </form>
             </div>
           </div>
