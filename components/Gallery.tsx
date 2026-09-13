@@ -74,20 +74,21 @@ export default function Gallery() {
             </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          <div className="columns-1 gap-8 md:columns-2 lg:columns-3">
             {galleryImages.map((image, i) => (
               <button
                 key={image.src}
                 onClick={() => setIndex(i)}
-                className="group overflow-hidden rounded-3xl text-left shadow-xl"
+                className="group mb-8 block w-full overflow-hidden rounded-3xl text-left shadow-xl break-inside-avoid"
               >
-                <div className="relative aspect-[4/5] overflow-hidden">
+                <div className="relative overflow-hidden rounded-3xl">
                   <Image
                     src={image.src}
                     alt={image.title}
-                    fill
+                    width={1200}
+                    height={1200}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                    className="object-cover transition duration-500 group-hover:scale-110"
+                    className="h-auto w-full transition duration-500 group-hover:scale-105"
                   />
 
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80" />
