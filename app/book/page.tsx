@@ -28,6 +28,7 @@ declare global {
         element: HTMLElement,
         options: {
           sitekey: string;
+          size?: "normal" | "compact" | "flexible" | "invisible";
           callback?: (token: string) => void;
           "expired-callback"?: () => void;
           "error-callback"?: () => void;
@@ -109,13 +110,19 @@ export default function BookPage() {
         turnstileRef.current,
         {
           sitekey: siteKey,
+
+          // Makes the CAPTCHA fit smaller mobile screens
+          size: "flexible",
+
           callback: (token: string) => {
             setTurnstileToken(token);
             setError("");
           },
+
           "expired-callback": () => {
             setTurnstileToken("");
           },
+
           "error-callback": () => {
             setTurnstileToken("");
             setError(
@@ -233,6 +240,8 @@ export default function BookPage() {
           </div>
 
           <div className="grid min-w-0 gap-12 lg:grid-cols-2">
+
+            {/* Why Choose Bobby's */}
             <div className="min-w-0 rounded-3xl bg-white p-10 shadow-xl">
               <h2 className="text-4xl font-extrabold tracking-tight text-slate-900">
                 Why Choose Bobby&apos;s Super Whip?
@@ -264,27 +273,22 @@ export default function BookPage() {
 
                 <Feature
                   icon={<CreditCard size={28} />}
-                  title="Cash & Card Accepted"
-                  text="We accept cash, contactless and all major card payments."
+                  title="Flexible Event Packages"
+                  text="Packages tailored to suit your event, guest numbers and budget."
                 />
 
                 <Feature
                   icon={<MapPin size={28} />}
-                  title="Local Family-Run Business"
-                  text="Proudly serving Walsall and the West Midlands since 2016."
-                />
-
-                <Feature
-                  icon={<PartyPopper size={28} />}
-                  title="Suitable for All Events"
-                  text="Birthdays, weddings, schools, nurseries, corporate events, festivals and community celebrations."
+                  title="Walsall & West Midlands"
+                  text="Serving events across Walsall and the surrounding West Midlands."
                 />
               </div>
             </div>
 
+            {/* Booking Form */}
             <div className="min-w-0 rounded-3xl bg-white p-10 shadow-xl">
               <h2 className="mb-8 text-3xl font-bold text-slate-800">
-                Contact for your no obligation Quote
+                Get My Quote
               </h2>
 
               {success && (
@@ -317,6 +321,8 @@ export default function BookPage() {
               )}
 
               <form onSubmit={handleSubmit} className="min-w-0 space-y-6">
+
+                {/* Name */}
                 <div className="relative min-w-0">
                   <User
                     size={20}
@@ -332,6 +338,7 @@ export default function BookPage() {
                   />
                 </div>
 
+                {/* Email */}
                 <div className="relative min-w-0">
                   <Mail
                     size={20}
@@ -348,6 +355,7 @@ export default function BookPage() {
                   />
                 </div>
 
+                {/* Phone */}
                 <div className="relative min-w-0">
                   <Phone
                     size={20}
@@ -363,6 +371,7 @@ export default function BookPage() {
                   />
                 </div>
 
+                {/* Event Type */}
                 <div className="relative min-w-0">
                   <PartyPopper
                     size={20}
@@ -376,7 +385,9 @@ export default function BookPage() {
                     className={`${inputClass} pl-12 text-slate-500`}
                     style={{ color: "#64748b" }}
                   >
-                    <option value="">Event Type</option>
+                    <option value="" className="text-slate-500">
+                      Event Type
+                    </option>
                     <option>Birthday Party</option>
                     <option>Wedding</option>
                     <option>School</option>
@@ -388,6 +399,7 @@ export default function BookPage() {
                   </select>
                 </div>
 
+                {/* Event Date */}
                 <div className="relative min-w-0">
                   <Calendar
                     size={20}
@@ -403,6 +415,7 @@ export default function BookPage() {
                   />
                 </div>
 
+                {/* Venue */}
                 <div className="relative min-w-0">
                   <MapPinned
                     size={20}
@@ -418,6 +431,7 @@ export default function BookPage() {
                   />
                 </div>
 
+                {/* Guests */}
                 <div className="relative min-w-0">
                   <Users
                     size={20}
@@ -434,6 +448,7 @@ export default function BookPage() {
                   />
                 </div>
 
+                {/* Message */}
                 <div className="relative min-w-0">
                   <MessageSquare
                     size={20}
@@ -451,10 +466,14 @@ export default function BookPage() {
                 </div>
 
                 {/* Cloudflare Turnstile */}
-                <div className="flex max-w-full justify-center overflow-hidden pt-2">
-                  <div ref={turnstileRef} />
+                <div className="flex w-full max-w-full justify-center pt-2">
+                  <div
+                    ref={turnstileRef}
+                    className="w-full max-w-[300px]"
+                  />
                 </div>
 
+                {/* Submit */}
                 <button
                   type="submit"
                   disabled={loading}
@@ -468,6 +487,7 @@ export default function BookPage() {
                   ) : (
                     <>
                       Request a Quote
+
                       <ArrowRight
                         size={22}
                         className="transition-transform duration-300 group-hover:translate-x-1"
@@ -476,11 +496,14 @@ export default function BookPage() {
                   )}
                 </button>
 
+                {/* Privacy */}
                 <p className="mt-5 flex items-center justify-center gap-2 text-center text-sm text-slate-500">
                   <Lock size={16} />
+
                   Your information is kept private and will only be used to
                   respond to your enquiry.
                 </p>
+
               </form>
             </div>
           </div>
