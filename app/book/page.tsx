@@ -48,12 +48,12 @@ function Feature({
   text: string;
 }) {
   return (
-    <div className="group flex items-start gap-4 rounded-2xl border border-slate-200 border-l-4 border-l-sky-500 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-sky-300 hover:shadow-xl">
+    <div className="group flex min-w-0 items-start gap-4 rounded-2xl border border-slate-200 border-l-4 border-l-sky-500 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-sky-300 hover:shadow-xl">
       <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-200 via-sky-300 to-sky-400 text-white shadow-sm transition-all duration-300 group-hover:scale-110 group-hover:shadow-md">
         {icon}
       </div>
 
-      <div>
+      <div className="min-w-0">
         <h3 className="text-lg font-semibold text-slate-800">
           {title}
         </h3>
@@ -173,7 +173,9 @@ export default function BookPage() {
     }
 
     if (!turnstileToken) {
-      setError("Please complete the security check before sending your enquiry.");
+      setError(
+        "Please complete the security check before sending your enquiry."
+      );
       return;
     }
 
@@ -212,14 +214,14 @@ export default function BookPage() {
   };
 
   const inputClass =
-    "w-full rounded-xl border border-slate-300 bg-white p-4 text-slate-900 placeholder:text-slate-500 shadow-sm transition focus:border-sky-500 focus:outline-none focus:ring-4 focus:ring-sky-200";
+    "box-border w-full max-w-full rounded-xl border border-slate-300 bg-white p-4 text-slate-900 placeholder:text-slate-500 shadow-sm transition focus:border-sky-500 focus:outline-none focus:ring-4 focus:ring-sky-200";
 
   return (
     <>
       <Breadcrumb current="Book Bobby's Super Whip" />
 
-      <main className="min-h-screen bg-gradient-to-b from-sky-50 to-white">
-        <section className="mx-auto max-w-7xl px-6 py-20">
+      <main className="min-h-screen overflow-x-clip bg-gradient-to-b from-sky-50 to-white">
+        <section className="mx-auto w-full max-w-7xl overflow-x-clip px-4 py-20 sm:px-6">
           <div className="mb-16 text-center">
             <span className="rounded-full bg-sky-100 px-4 py-2 text-sm font-semibold text-sky-700">
               Book Bobby&apos;s Super Whip
@@ -230,8 +232,8 @@ export default function BookPage() {
             </h1>
           </div>
 
-          <div className="grid gap-12 lg:grid-cols-2">
-            <div className="rounded-3xl bg-white p-10 shadow-xl">
+          <div className="grid min-w-0 gap-12 lg:grid-cols-2">
+            <div className="min-w-0 rounded-3xl bg-white p-10 shadow-xl">
               <h2 className="text-4xl font-extrabold tracking-tight text-slate-900">
                 Why Choose Bobby&apos;s Super Whip?
               </h2>
@@ -280,7 +282,7 @@ export default function BookPage() {
               </div>
             </div>
 
-            <div className="rounded-3xl bg-white p-10 shadow-xl">
+            <div className="min-w-0 rounded-3xl bg-white p-10 shadow-xl">
               <h2 className="mb-8 text-3xl font-bold text-slate-800">
                 Contact for your no obligation Quote
               </h2>
@@ -314,8 +316,8 @@ export default function BookPage() {
                 </div>
               )}
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="relative">
+              <form onSubmit={handleSubmit} className="min-w-0 space-y-6">
+                <div className="relative min-w-0">
                   <User
                     size={20}
                     className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"
@@ -330,7 +332,7 @@ export default function BookPage() {
                   />
                 </div>
 
-                <div className="relative">
+                <div className="relative min-w-0">
                   <Mail
                     size={20}
                     className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"
@@ -346,7 +348,7 @@ export default function BookPage() {
                   />
                 </div>
 
-                <div className="relative">
+                <div className="relative min-w-0">
                   <Phone
                     size={20}
                     className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"
@@ -361,7 +363,7 @@ export default function BookPage() {
                   />
                 </div>
 
-                <div className="relative">
+                <div className="relative min-w-0">
                   <PartyPopper
                     size={20}
                     className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"
@@ -386,7 +388,7 @@ export default function BookPage() {
                   </select>
                 </div>
 
-                <div className="relative">
+                <div className="relative min-w-0">
                   <Calendar
                     size={20}
                     className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"
@@ -401,7 +403,7 @@ export default function BookPage() {
                   />
                 </div>
 
-                <div className="relative">
+                <div className="relative min-w-0">
                   <MapPinned
                     size={20}
                     className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"
@@ -416,7 +418,7 @@ export default function BookPage() {
                   />
                 </div>
 
-                <div className="relative">
+                <div className="relative min-w-0">
                   <Users
                     size={20}
                     className="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"
@@ -432,7 +434,7 @@ export default function BookPage() {
                   />
                 </div>
 
-                <div className="relative">
+                <div className="relative min-w-0">
                   <MessageSquare
                     size={20}
                     className="pointer-events-none absolute left-4 top-5 text-slate-400"
@@ -449,14 +451,14 @@ export default function BookPage() {
                 </div>
 
                 {/* Cloudflare Turnstile */}
-                <div className="flex justify-center pt-2">
+                <div className="flex max-w-full justify-center overflow-hidden pt-2">
                   <div ref={turnstileRef} />
                 </div>
 
                 <button
                   type="submit"
                   disabled={loading}
-                  className="group flex w-full items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-sky-500 to-sky-600 py-4 text-lg font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-70"
+                  className="group flex w-full max-w-full items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-sky-500 to-sky-600 py-4 text-lg font-bold text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl disabled:cursor-not-allowed disabled:opacity-70"
                 >
                   {loading ? (
                     <div className="flex items-center gap-3">
