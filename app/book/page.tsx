@@ -106,13 +106,15 @@ export default function BookPage() {
         return;
       }
 
+      // Use Cloudflare's compact widget on mobile.
+      // Keep the normal widget on desktop.
+      const isMobile = window.innerWidth < 768;
+
       turnstileWidgetId.current = window.turnstile.render(
         turnstileRef.current,
         {
           sitekey: siteKey,
-
-          // Makes the CAPTCHA fit smaller mobile screens
-          size: "flexible",
+          size: isMobile ? "compact" : "normal",
 
           callback: (token: string) => {
             setTurnstileToken(token);
@@ -164,6 +166,7 @@ export default function BookPage() {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+
     setSuccess("");
     setError("");
 
@@ -466,11 +469,8 @@ export default function BookPage() {
                 </div>
 
                 {/* Cloudflare Turnstile */}
-                <div className="flex w-full max-w-full justify-center pt-2">
-                  <div
-                    ref={turnstileRef}
-                    className="w-full max-w-[300px]"
-                  />
+                <div className="flex w-full justify-center pt-2">
+                  <div ref={turnstileRef} />
                 </div>
 
                 {/* Submit */}
