@@ -243,6 +243,7 @@ export default function BookPage() {
           </div>
 
           <div className="grid min-w-0 gap-12 lg:grid-cols-2">
+
             {/* Why Choose Bobby's */}
             <div className="min-w-0 rounded-3xl bg-white p-10 shadow-xl">
               <h2 className="text-4xl font-extrabold tracking-tight text-slate-900">
@@ -290,7 +291,7 @@ export default function BookPage() {
             {/* Booking Form */}
             <div className="min-w-0 rounded-3xl bg-white p-10 shadow-xl">
               <h2 className="mb-8 text-3xl font-bold text-slate-800">
-                Get My Quote
+                Get Your No Obligation Quote
               </h2>
 
               {success && (
@@ -323,6 +324,7 @@ export default function BookPage() {
               )}
 
               <form onSubmit={handleSubmit} className="min-w-0 space-y-6">
+
                 {/* Name */}
                 <div className="relative min-w-0">
                   <User
@@ -504,6 +506,7 @@ export default function BookPage() {
                   Your information is kept private and will only be used to
                   respond to your enquiry.
                 </p>
+
               </form>
             </div>
           </div>
