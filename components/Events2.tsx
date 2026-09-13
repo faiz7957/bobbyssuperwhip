@@ -109,94 +109,95 @@ export default function Events2() {
           </p>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-3">
+        {/* Event Cards */}
+        <div className="grid grid-cols-3 gap-3 md:gap-8">
 
           {/* Birthday Parties */}
-          <div className="h-full rounded-3xl bg-white p-6 shadow-lg transition hover:-translate-y-2 hover:shadow-xl">
-            <h3 className="text-2xl font-bold text-sky-700">
+          <div className="h-full rounded-2xl bg-white p-3 shadow-lg transition hover:-translate-y-2 hover:shadow-xl md:rounded-3xl md:p-6">
+            <h3 className="text-sm font-bold leading-tight text-sky-700 md:text-2xl">
               🎂 Birthday Parties
             </h3>
-            <p className="mt-4 text-slate-600">
+            <p className="mt-2 text-[11px] leading-4 text-slate-600 md:mt-4 md:text-base md:leading-normal">
               Fresh whippy ice cream, luxury sundaes and premium slush for all ages.
             </p>
           </div>
 
           {/* Weddings */}
-          <div className="h-full rounded-3xl bg-white p-6 shadow-lg transition hover:-translate-y-2 hover:shadow-xl">
-            <h3 className="text-2xl font-bold text-sky-700">
+          <div className="h-full rounded-2xl bg-white p-3 shadow-lg transition hover:-translate-y-2 hover:shadow-xl md:rounded-3xl md:p-6">
+            <h3 className="text-sm font-bold leading-tight text-sky-700 md:text-2xl">
               💒 Weddings
             </h3>
-            <p className="mt-4 text-slate-600">
+            <p className="mt-2 text-[11px] leading-4 text-slate-600 md:mt-4 md:text-base md:leading-normal">
               A unique dessert experience that guests of all ages will love.
             </p>
           </div>
 
           {/* Schools & Nurseries */}
-          <div className="h-full rounded-3xl bg-white p-6 shadow-lg transition hover:-translate-y-2 hover:shadow-xl">
-            <h3 className="text-2xl font-bold text-sky-700">
+          <div className="h-full rounded-2xl bg-white p-3 shadow-lg transition hover:-translate-y-2 hover:shadow-xl md:rounded-3xl md:p-6">
+            <h3 className="text-sm font-bold leading-tight text-sky-700 md:text-2xl">
               🏫 Schools &amp; Nurseries
             </h3>
-            <p className="mt-4 text-slate-600">
+            <p className="mt-2 text-[11px] leading-4 text-slate-600 md:mt-4 md:text-base md:leading-normal">
               Perfect for sports days, fun days and school celebrations.
             </p>
           </div>
 
           {/* Corporate Events */}
-          <div className="h-full rounded-3xl bg-white p-6 shadow-lg transition hover:-translate-y-2 hover:shadow-xl">
-            <h3 className="text-2xl font-bold text-sky-700">
+          <div className="h-full rounded-2xl bg-white p-3 shadow-lg transition hover:-translate-y-2 hover:shadow-xl md:rounded-3xl md:p-6">
+            <h3 className="text-sm font-bold leading-tight text-sky-700 md:text-2xl">
               🏢 Corporate Events
             </h3>
-            <p className="mt-4 text-slate-600">
+            <p className="mt-2 text-[11px] leading-4 text-slate-600 md:mt-4 md:text-base md:leading-normal">
               Great for staff appreciation days, family fun days and company celebrations.
             </p>
           </div>
 
           {/* Fun Fairs */}
-          <div className="h-full rounded-3xl bg-white p-6 shadow-lg transition hover:-translate-y-2 hover:shadow-xl">
-            <h3 className="text-2xl font-bold text-sky-700">
+          <div className="h-full rounded-2xl bg-white p-3 shadow-lg transition hover:-translate-y-2 hover:shadow-xl md:rounded-3xl md:p-6">
+            <h3 className="text-sm font-bold leading-tight text-sky-700 md:text-2xl">
               🎡 Fun Fairs
             </h3>
-            <p className="mt-4 text-slate-600">
+            <p className="mt-2 text-[11px] leading-4 text-slate-600 md:mt-4 md:text-base md:leading-normal">
               A great addition to fun fairs and family days, with treats for visitors of all ages.
             </p>
           </div>
 
           {/* Festivals */}
-          <div className="h-full rounded-3xl bg-white p-6 shadow-lg transition hover:-translate-y-2 hover:shadow-xl">
-            <h3 className="text-2xl font-bold text-sky-700">
+          <div className="h-full rounded-2xl bg-white p-3 shadow-lg transition hover:-translate-y-2 hover:shadow-xl md:rounded-3xl md:p-6">
+            <h3 className="text-sm font-bold leading-tight text-sky-700 md:text-2xl">
               🎉 Festivals
             </h3>
-            <p className="mt-4 text-slate-600">
+            <p className="mt-2 text-[11px] leading-4 text-slate-600 md:mt-4 md:text-base md:leading-normal">
               Keep festival crowds refreshed with delicious ice cream, sundaes and premium slush.
             </p>
           </div>
 
           {/* Charity Events */}
-          <div className="h-full rounded-3xl bg-white p-6 shadow-lg transition hover:-translate-y-2 hover:shadow-xl">
-            <h3 className="text-2xl font-bold text-sky-700">
+          <div className="h-full rounded-2xl bg-white p-3 shadow-lg transition hover:-translate-y-2 hover:shadow-xl md:rounded-3xl md:p-6">
+            <h3 className="text-sm font-bold leading-tight text-sky-700 md:text-2xl">
               ❤️ Charity Events
             </h3>
-            <p className="mt-4 text-slate-600">
+            <p className="mt-2 text-[11px] leading-4 text-slate-600 md:mt-4 md:text-base md:leading-normal">
               Helping make charity events extra special with a fun dessert experience for everyone.
             </p>
           </div>
 
           {/* Care Homes */}
-          <div className="h-full rounded-3xl bg-white p-6 shadow-lg transition hover:-translate-y-2 hover:shadow-xl">
-            <h3 className="text-2xl font-bold text-sky-700">
+          <div className="h-full rounded-2xl bg-white p-3 shadow-lg transition hover:-translate-y-2 hover:shadow-xl md:rounded-3xl md:p-6">
+            <h3 className="text-sm font-bold leading-tight text-sky-700 md:text-2xl">
               🏡 Care Homes
             </h3>
-            <p className="mt-4 text-slate-600">
+            <p className="mt-2 text-[11px] leading-4 text-slate-600 md:mt-4 md:text-base md:leading-normal">
               Bringing a little extra joy to residents with delicious treats and a memorable experience.
             </p>
           </div>
 
           {/* Community Events */}
-          <div className="h-full rounded-3xl bg-white p-6 shadow-lg transition hover:-translate-y-2 hover:shadow-xl">
-            <h3 className="text-2xl font-bold text-sky-700">
+          <div className="h-full rounded-2xl bg-white p-3 shadow-lg transition hover:-translate-y-2 hover:shadow-xl md:rounded-3xl md:p-6">
+            <h3 className="text-sm font-bold leading-tight text-sky-700 md:text-2xl">
               🎪 Community Events
             </h3>
-            <p className="mt-4 text-slate-600">
+            <p className="mt-2 text-[11px] leading-4 text-slate-600 md:mt-4 md:text-base md:leading-normal">
               Perfect for local community days, fairs and celebrations, bringing something special for everyone.
             </p>
           </div>
