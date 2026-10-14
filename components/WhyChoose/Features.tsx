@@ -1,10 +1,9 @@
+
+"use client";
+
 import Image from "next/image";
-import {
-  IceCreamCone,
-  CupSoda,
-  PartyPopper,
-  Smile,
-} from "lucide-react";
+import { useEffect, useState } from "react";
+import { IceCreamCone, CupSoda, PartyPopper, Smile } from "lucide-react";
 
 const features = [
   {
@@ -29,36 +28,101 @@ const features = [
   },
 ];
 
-const customerPhotos = [
+type CustomerPhoto = {
+  src: string;
+  alt: string;
+  position?: string;
+  publicId?: string;
+};
+
+const localCustomerPhotos: CustomerPhoto[] = [
   {
     src: "/images/Customers/on%20website/bobby_customer.jpg",
     alt: "Bobby and a young customer outside the ice cream van",
-    fit: "cover",
   },
   {
     src: "/images/Customers/on%20website/bobby_thumbs_up.jpg",
     alt: "Bobby giving a thumbs up beside the ice cream van",
-    fit: "cover",
   },
   {
     src: "/images/Customers/on%20website/boy_choc_dip.png",
     alt: "Customer enjoying a chocolate-dipped ice cream",
-    fit: "cover",
     position: "center 30%",
   },
   {
     src: "/images/Customers/on%20website/lady_choc_dip.jpg",
     alt: "Customer enjoying a chocolate-dipped ice cream",
-    fit: "cover",
     position: "center 15%",
   },
 ];
 
+// Preserve the appropriate descriptions and image crops for existing uploads.
+const cloudinaryCustomerDetails: Record<
+  string,
+  Omit<CustomerPhoto, "src" | "publicId">
+> = {
+  bar6rwv2u4xq1rutbmwj: {
+    alt: "Customer enjoying a chocolate-dipped ice cream",
+    position: "center 15%",
+  },
+  gmgrvoamnih81qpmym4g: {
+    alt: "Customer enjoying a chocolate-dipped ice cream",
+    position: "center 30%",
+  },
+  lwlxjiojak7iae8jacz0: {
+    alt: "Bobby serving ice cream from the van",
+  },
+  kkswhhch0jh7sdj6hkdm: {
+    alt: "Bobby and a young customer outside the ice cream van",
+  },
+};
+
 export default function Features() {
+  const [customerPhotos, setCustomerPhotos] =
+    useState<CustomerPhoto[]>(localCustomerPhotos);
+
+  useEffect(() => {
+    let active = true;
+
+    fetch("/api/admin/photos?category=customers", {
+      cache: "no-store",
+    })
+      .then((response) => (response.ok ? response.json() : null))
+      .then((data) => {
+        if (!active || !data?.photos?.length) return;
+
+        // The API already returns photos in the saved Cloudinary order.
+        // Do not sort them here: doing so would override the admin arrangement.
+        const photos: CustomerPhoto[] = data.photos.map(
+          (photo: { url: string; publicId: string }) => {
+            const id = photo.publicId.split("/").pop() || "";
+            const details = cloudinaryCustomerDetails[id];
+
+            return {
+              src: photo.url,
+              alt: details?.alt || "Customer enjoying Bobby's Super Whip",
+              position: details?.position,
+              publicId: photo.publicId,
+            };
+          },
+        );
+
+        if (active) {
+          setCustomerPhotos(photos);
+        }
+      })
+      .catch(() => {
+        // Keep the local photos visible if Cloudinary is temporarily unavailable.
+      });
+
+    return () => {
+      active = false;
+    };
+  }, []);
+
   return (
     <section className="w-full bg-white py-12 sm:py-16 md:py-24">
       <div className="w-full px-4 sm:px-6 lg:px-10">
-        {/* Section heading */}
         <div className="mb-10 text-center sm:mb-12 md:mb-16">
           <h2 className="text-3xl font-black text-slate-900 sm:text-4xl">
             Everything You Need For A Great Event
@@ -70,7 +134,6 @@ export default function Features() {
           </p>
         </div>
 
-        {/* Four feature cards */}
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:gap-6">
           {features.map((feature) => {
             const Icon = feature.icon;
@@ -96,28 +159,39 @@ export default function Features() {
           })}
         </div>
 
-        {/* Four static customer photos */}
         <div className="mt-8 grid grid-cols-2 gap-3 sm:mt-12 sm:gap-4 lg:grid-cols-4">
           {customerPhotos.map((photo) => (
             <div
-              key={photo.src}
+              key={photo.publicId || photo.src}
               className="relative aspect-[5/4] overflow-hidden bg-slate-100"
             >
-              <Image
-                src={photo.src}
-                alt={photo.alt}
-                fill
-                sizes="(max-width: 767px) 48vw, 25vw"
-                className={`pointer-events-none select-none ${
-                  photo.fit === "contain" ? "object-contain" : "object-cover"
-                }`}
-                style={
-                  photo.position
-                    ? { objectPosition: photo.position }
-                    : undefined
-                }
-                draggable={false}
-              />
+              {photo.publicId ? (
+                <img
+                  src={photo.src}
+                  alt={photo.alt}
+                  loading="lazy"
+                  className="pointer-events-none h-full w-full select-none object-cover"
+                  style={
+                    photo.position
+                      ? { objectPosition: photo.position }
+                      : undefined
+                  }
+                />
+              ) : (
+                <Image
+                  src={photo.src}
+                  alt={photo.alt}
+                  fill
+                  sizes="(max-width: 767px) 48vw, 25vw"
+                  className="pointer-events-none select-none object-cover"
+                  style={
+                    photo.position
+                      ? { objectPosition: photo.position }
+                      : undefined
+                  }
+                  draggable={false}
+                />
+              )}
             </div>
           ))}
         </div>
